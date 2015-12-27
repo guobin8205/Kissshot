@@ -1,0 +1,6 @@
+[submodule "bgfx"]
+	path = bgfx
+	url = https://github.com/KUNAGISA/bgfx.git
+[submodule "bx"]
+	path = bx
+	url = https://github.com/KUNAGISA/bx.git

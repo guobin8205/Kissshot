@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="..\..\base\KSStorage-win10.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\base\KSDebug.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\base\KSDebug.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\KSStorage.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\KSMacro.h">
+      <Filter>base</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{178ba70c-4ec4-4312-8aed-31d91b123582}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{3f546c4c-2e69-458d-be0a-cbb57c0d0d5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\system">
+      <UniqueIdentifier>{b02d9833-c4de-4c62-ab60-338804180e37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\com">
+      <UniqueIdentifier>{c1bf2a41-67af-4277-87bc-e0b7c73df501}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\platform">
+      <UniqueIdentifier>{588302d3-5fef-4770-baca-426ab682f82e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

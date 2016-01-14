@@ -207,7 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\base\KSDebug.cpp" />
-    <ClCompile Include="..\..\base\KSStorage-win10.cpp" />
+    <ClCompile Include="..\..\base\KSStorage.cpp" />
     <ClCompile Include="..\..\base\KSStringUtil.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

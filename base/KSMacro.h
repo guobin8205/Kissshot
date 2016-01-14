@@ -1,7 +1,7 @@
 ﻿#pragma once
 
-#ifndef __KISSHOT__ENGINE__MACRO__
-#define __KISSHOT__ENGINE__MACRO__
+#ifndef __KISSSHOT__ENGINE__MACRO__
+#define __KISSSHOT__ENGINE__MACRO__
 #include "bx/platform.h"
 
 #define KS_PLATFORM_ANDROID		BX_PLATFORM_ANDROID
@@ -33,15 +33,15 @@
 
 
 #ifdef __cplusplus
-#define KS_BEGIN	namespace kisshot {
+#define KS_BEGIN	namespace kissshot {
 #define KS_END		}
 #else
 #define KS_BEGIN
 #define KS_END
 #endif
 
-#if !defined(KISSHOT_DEBUG) && (defined(_DEBUG) || defined(DEBUG) || defined(__DEBUG))
-#define KISSHOT_DEBUG 1
+#if !defined(KISSSHOT_DEBUG) && (defined(_DEBUG) || defined(DEBUG) || defined(__DEBUG))
+#define KISSSHOT_DEBUG 1
 #endif
 
 #if KS_PLATFORM_WINRT || KS_PLATFORM_WINDESKTOP

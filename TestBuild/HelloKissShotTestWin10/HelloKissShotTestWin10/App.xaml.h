@@ -7,7 +7,7 @@
 
 #include "App.g.h"
 
-namespace HelloKisshot
+namespace HelloKissShotTestWin10
 {
 	/// <summary>
 	/// 提供特定于应用程序的行为，以补充默认的应用程序类。

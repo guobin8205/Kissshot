@@ -8,6 +8,9 @@
     <ClCompile Include="..\..\base\KSDebug.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\base\KSStringUtil.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -19,6 +22,9 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="..\..\base\KSMacro.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\KSStringUtil.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>

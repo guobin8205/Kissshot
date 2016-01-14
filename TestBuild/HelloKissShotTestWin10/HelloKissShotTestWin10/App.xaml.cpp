@@ -6,7 +6,7 @@
 #include "pch.h"
 #include "MainPage.xaml.h"
 
-using namespace HelloKisshot;
+using namespace HelloKissShotTestWin10;
 
 using namespace Platform;
 using namespace Windows::ApplicationModel;

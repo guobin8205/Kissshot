@@ -8,7 +8,7 @@
 
 
 
-namespace HelloKisshot
+namespace HelloKissShotTestWin10
 {
     [::Windows::Foundation::Metadata::WebHostHidden]
     partial ref class MainPage : public ::Windows::UI::Xaml::Controls::Page, 

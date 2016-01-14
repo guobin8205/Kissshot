@@ -8,7 +8,7 @@
 
 #include "XamlTypeInfo.g.h"
 
-namespace HelloKisshot
+namespace HelloKissShotTestWin10
 {
     partial ref class App :  public ::Windows::UI::Xaml::Application,
         public ::Windows::UI::Xaml::Markup::IXamlMetadataProvider

@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="3f716158-4dbf-41ae-8f09-008f0b32d8a6"
+    Name="3b260753-b6b2-4600-84d5-49c684cd55b5"
     Publisher="CN=kunag"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="3f716158-4dbf-41ae-8f09-008f0b32d8a6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="3b260753-b6b2-4600-84d5-49c684cd55b5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>HelloKisshot</DisplayName>
+    <DisplayName>HelloKissShotTestWin10</DisplayName>
     <PublisherDisplayName>kunag</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="HelloKisshot.App">
+      EntryPoint="HelloKissShotTestWin10.App">
       <uap:VisualElements
-        DisplayName="HelloKisshot"
+        DisplayName="HelloKissShotTestWin10"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="HelloKisshot"
+        Description="HelloKissShotTestWin10"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

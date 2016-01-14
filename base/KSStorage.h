@@ -7,7 +7,7 @@
 #include <vector>
 KS_BEGIN
 
-class Data final
+class KS_DLL Data final
 {
 public:
 	Data(void)
@@ -21,10 +21,11 @@ public:
 		reset();
 	}
 
-	inline void reset(void)
+	inline void reset(unsigned char* data = nullptr,size_t size = 0U)
 	{
-		mSize = 0;
+		size = 0;
 		KS_SAFE_FREE(mData);
+		mData = data;
 	}
 private:
 	unsigned char* mData;
@@ -37,22 +38,27 @@ public:
 	static Storage* getInstance(void);
 	static void destoryInstance(void);
 
-	std::string getWritablePath(void);
-	std::string getLocationPath(void);
+	std::wstring getWritablePath(void);
+	std::wstring getLocationPath(void);
 
-	void addSearchPath(const std::string path);
+	void addSearchPath(const std::wstring path);
 
-	bool isFileExist(const std::string& file);
-	bool getFullPathWithFileName(const std::string& file, std::string& output);
+	bool isFileExist(const std::wstring& file);
+	bool getFullPathWithFileName(const std::wstring& file, std::wstring& output);
+	bool isAbsolutePath(const std::wstring& path);
 
-	Data getDataFromFile(const std::string& file);
+
+	Data getDataFromFile(const std::wstring& file);
+
+	bool createFolderWithName(const std::wstring& name);
+	bool deleteFileWithPath(const std::wstring& file);
 
 private:
 	bool _init(void);
 	
 
 private:
-	std::vector<std::string> mPaths;
+	std::vector<std::wstring> mPaths;
 };
 
 KS_END

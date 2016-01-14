@@ -1,37 +1,39 @@
-#include "pch.h"
+#include "KSStringUtil.h"
 #include "KSDebug.h"
 #include "bx/debug.h"
 #include <string.h>
 #include <stdio.h>
-#include <new>
+#include <stdarg.h>
 KS_BEGIN
 
 size_t MAX_LOG_LENGTH = 16 * 1024;
 
-static void _log(const char* msg, va_list args)
+static void _log(const wchar_t* msg, va_list args)
 {
 	int bufferSize = MAX_LOG_LENGTH;
-	char* buf = nullptr;
+	size_t len = 0U;
+	wchar_t* buf = nullptr;
 	do
 	{
-		buf = new(std::nothrow)char[bufferSize];
+		buf = (wchar_t*)malloc(len * sizeof(wchar_t));
 		if (buf == nullptr)
 			return; // not enough memory
 
-		int ret = vsnprintf(buf, bufferSize - 3, msg, args);
-		if (ret < 0)
+		len = _vsnwprintf(buf, bufferSize - 3, msg, args);
+		if (len < 0)
 		{
 			bufferSize *= 2;
-			delete[] buf;
+			KS_SAFE_FREE(buf);
 		}
 		else
 			break;
 	} while (true);
-	bx::debugOutput(buf);
-	delete[] buf;
+	::std::wstring str(buf, len);
+	bx::debugOutput(KS_W2A(buf).c_str());
+	KS_SAFE_FREE(buf);
 }
 
-void KS_DLL log(const char * msg, ...)
+void KS_DLL log(const wchar_t * msg, ...)
 {
 	va_list args;
 	va_start(args, msg);

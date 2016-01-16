@@ -50,7 +50,7 @@ public:
 
 	Data getDataFromFile(const std::wstring& file);
 
-	bool createFolderWithName(const std::wstring& name);
+	bool createFolderInWritablePath(const std::wstring& path);
 	bool deleteFileWithPath(const std::wstring& file);
 
 private:

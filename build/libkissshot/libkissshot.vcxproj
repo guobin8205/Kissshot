@@ -126,7 +126,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>KISSSHOT_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -139,7 +139,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,7 +151,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>KISSSHOT_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -164,7 +164,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -176,7 +176,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>KISSSHOT_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -189,7 +189,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -202,6 +202,10 @@
     <ClInclude Include="..\..\base\KSDebug.h" />
     <ClInclude Include="..\..\base\KSStorage.h" />
     <ClInclude Include="..\..\base\KSStringUtil.h" />
+    <ClInclude Include="..\..\core\base\KSEntity.h" />
+    <ClInclude Include="..\..\core\base\KSMath.h" />
+    <ClInclude Include="..\..\core\base\KSScene.h" />
+    <ClInclude Include="..\..\core\base\KSTransform.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

@@ -2,38 +2,47 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="..\..\base\KSStorage-win10.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\base\KSDebug.cpp">
-      <Filter>base</Filter>
+      <Filter>util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\base\KSStringUtil.cpp">
-      <Filter>base</Filter>
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\base\KSStorage.cpp">
+      <Filter>util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="..\..\base\KSDebug.h">
-      <Filter>base</Filter>
+      <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\base\KSStorage.h">
-      <Filter>base</Filter>
+      <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\base\KSMacro.h">
-      <Filter>base</Filter>
+      <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\base\KSStringUtil.h">
-      <Filter>base</Filter>
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\base\KSScene.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\base\KSEntity.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\base\KSTransform.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\base\KSMath.h">
+      <Filter>core\base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="core">
       <UniqueIdentifier>{178ba70c-4ec4-4312-8aed-31d91b123582}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="base">
-      <UniqueIdentifier>{3f546c4c-2e69-458d-be0a-cbb57c0d0d5e}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\system">
       <UniqueIdentifier>{b02d9833-c4de-4c62-ab60-338804180e37}</UniqueIdentifier>
@@ -41,7 +50,13 @@
     <Filter Include="core\com">
       <UniqueIdentifier>{c1bf2a41-67af-4277-87bc-e0b7c73df501}</UniqueIdentifier>
     </Filter>
-    <Filter Include="base\platform">
+    <Filter Include="core\base">
+      <UniqueIdentifier>{11916289-53fc-4972-a332-4634b394b96a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{3f546c4c-2e69-458d-be0a-cbb57c0d0d5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\platform">
       <UniqueIdentifier>{588302d3-5fef-4770-baca-426ab682f82e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

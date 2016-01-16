@@ -4,6 +4,7 @@
 
 #if KS_PLATFORM_WINRT
 #include <Windows.h>
+#include <ppltasks.h>
 #endif
 
 KS_BEGIN
@@ -106,11 +107,6 @@ Data Storage::getDataFromFile(const std::wstring & file)
 	return data;
 }
 
-bool Storage::deleteFileWithPath(const std::wstring & file)
-{
-	return false;
-}
-
 bool Storage::_init(void)
 {
 	return false;
@@ -140,11 +136,16 @@ bool Storage::isAbsolutePath(const std::wstring & path)
 	return false;
 }
 
-bool Storage::createFolderWithName(const std::wstring & name)
+bool Storage::createFolderInWritablePath(const std::wstring & path)
 {
+	
 	return false;
 }
 
+bool Storage::deleteFileWithPath(const std::wstring & file)
+{
+	return false;
+}
 #endif
 KS_END
 

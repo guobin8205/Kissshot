@@ -1,32 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="pch.cpp" />
-    <ClCompile Include="..\..\base\KSDebug.cpp">
+    <ClCompile Include="..\..\core\base\KSMath.cpp">
+      <Filter>core\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\base\KSTransform.cpp">
+      <Filter>core\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\util\KSDebug.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\base\KSStringUtil.cpp">
+    <ClCompile Include="..\..\util\KSStorage.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\base\KSStorage.cpp">
+    <ClCompile Include="..\..\util\KSStringUtil.cpp">
       <Filter>util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="..\..\base\KSDebug.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\base\KSStorage.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\base\KSMacro.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\base\KSStringUtil.h">
-      <Filter>util</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\core\base\KSScene.h">
       <Filter>core\base</Filter>
     </ClInclude>
@@ -38,6 +29,19 @@
     </ClInclude>
     <ClInclude Include="..\..\core\base\KSMath.h">
       <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\kissshot.h" />
+    <ClInclude Include="..\..\util\KSDebug.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\util\KSMacro.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\util\KSStorage.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\util\KSStringUtil.h">
+      <Filter>util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

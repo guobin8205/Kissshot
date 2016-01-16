@@ -6,7 +6,7 @@
 #include <stdarg.h>
 KS_BEGIN
 
-size_t MAX_LOG_LENGTH = 16 * 1024;
+static size_t MAX_LOG_LENGTH = 16 * 1024;
 
 static void _log(const wchar_t* msg, va_list args)
 {
@@ -15,7 +15,7 @@ static void _log(const wchar_t* msg, va_list args)
 	wchar_t* buf = nullptr;
 	do
 	{
-		buf = (wchar_t*)malloc(len * sizeof(wchar_t));
+		buf = (wchar_t*)malloc(bufferSize * sizeof(wchar_t));
 		if (buf == nullptr)
 			return; // not enough memory
 
@@ -29,8 +29,9 @@ static void _log(const wchar_t* msg, va_list args)
 			break;
 	} while (true);
 	::std::wstring str(buf, len);
-	bx::debugOutput(KS_W2A(buf).c_str());
 	KS_SAFE_FREE(buf);
+	bx::debugOutput((KS_W2A(str) + '\n').c_str());
+	
 }
 
 void KS_DLL log(const wchar_t * msg, ...)

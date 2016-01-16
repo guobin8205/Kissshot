@@ -124,10 +124,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>KISSSHOT_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,9 +138,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,10 +152,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>KISSSHOT_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,9 +166,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -174,10 +180,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>KISSSHOT_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -187,9 +194,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\base\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -198,29 +207,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\base\KSMacro.h" />
-    <ClInclude Include="..\..\base\KSDebug.h" />
-    <ClInclude Include="..\..\base\KSStorage.h" />
-    <ClInclude Include="..\..\base\KSStringUtil.h" />
+    <ClInclude Include="..\..\util\KSMacro.h" />
+    <ClInclude Include="..\..\util\KSDebug.h" />
+    <ClInclude Include="..\..\util\KSStorage.h" />
+    <ClInclude Include="..\..\util\KSStringUtil.h" />
     <ClInclude Include="..\..\core\base\KSEntity.h" />
     <ClInclude Include="..\..\core\base\KSMath.h" />
     <ClInclude Include="..\..\core\base\KSScene.h" />
     <ClInclude Include="..\..\core\base\KSTransform.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\core\kissshot.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\base\KSDebug.cpp" />
-    <ClCompile Include="..\..\base\KSStorage.cpp" />
-    <ClCompile Include="..\..\base\KSStringUtil.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="..\..\util\KSDebug.cpp" />
+    <ClCompile Include="..\..\util\KSStorage.cpp" />
+    <ClCompile Include="..\..\util\KSStringUtil.cpp" />
+    <ClCompile Include="..\..\core\base\KSMath.cpp" />
+    <ClCompile Include="..\..\core\base\KSTransform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\external\bgfx\.build\projects\vs2015-winstore82\bgfx.vcxproj">

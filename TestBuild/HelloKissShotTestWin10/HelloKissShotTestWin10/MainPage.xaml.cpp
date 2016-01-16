@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include "kissshot.h"
 
 using namespace HelloKissShotTestWin10;
 
@@ -24,4 +25,5 @@ using namespace Windows::UI::Xaml::Navigation;
 MainPage::MainPage()
 {
 	InitializeComponent();
+	KSLOG(L"这是中文哦 \n%s \n%s",L"It is English.",L"日本語です");
 }

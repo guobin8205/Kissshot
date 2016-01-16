@@ -103,48 +103,36 @@
     <ClCompile>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\..\;$(ProjectDir)..\..\..\core\;$(ProjectDir)..\..\..\core\base\;$(ProjectDir)..\..\..\util\;$(ProjectDir)..\..\..\external\bgfx\include\;$(ProjectDir)..\..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\..\;$(ProjectDir)..\..\..\core\;$(ProjectDir)..\..\..\core\base\;$(ProjectDir)..\..\..\util\;$(ProjectDir)..\..\..\external\bgfx\include\;$(ProjectDir)..\..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\..\;$(ProjectDir)..\..\..\core\;$(ProjectDir)..\..\..\core\base\;$(ProjectDir)..\..\..\util\;$(ProjectDir)..\..\..\external\bgfx\include\;$(ProjectDir)..\..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\..\;$(ProjectDir)..\..\..\core\;$(ProjectDir)..\..\..\core\base\;$(ProjectDir)..\..\..\util\;$(ProjectDir)..\..\..\external\bgfx\include\;$(ProjectDir)..\..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\..\;$(ProjectDir)..\..\..\core\;$(ProjectDir)..\..\..\core\base\;$(ProjectDir)..\..\..\util\;$(ProjectDir)..\..\..\external\bgfx\include\;$(ProjectDir)..\..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\..\;$(ProjectDir)..\..\..\core\;$(ProjectDir)..\..\..\core\base\;$(ProjectDir)..\..\..\util\;$(ProjectDir)..\..\..\external\bgfx\include\;$(ProjectDir)..\..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>

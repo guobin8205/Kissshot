@@ -127,7 +127,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\base\math\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -141,7 +141,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\base\math\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -155,7 +155,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\base\math\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -169,7 +169,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\base\math\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -183,7 +183,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\base\math\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -197,7 +197,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\;$(ProjectDir)..\..\core\;$(ProjectDir)..\..\core\base;$(ProjectDir)..\..\core\base\math\;$(ProjectDir)..\..\core\system\;$(ProjectDir)..\..\core\component\;$(ProjectDir)..\..\util\;$(ProjectDir)..\..\base\platform\proj.win10\;$(ProjectDir)..\..\external\bgfx\include\;$(ProjectDir)..\..\external\bx\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -207,6 +207,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\core\base\math\KSMathMacro.h" />
+    <ClInclude Include="..\..\core\base\math\KSMatrix4x4.h" />
+    <ClInclude Include="..\..\core\base\math\KSVector3.h" />
+    <ClInclude Include="..\..\core\base\math\KSVector4.h" />
     <ClInclude Include="..\..\util\KSMacro.h" />
     <ClInclude Include="..\..\util\KSDebug.h" />
     <ClInclude Include="..\..\util\KSStorage.h" />
@@ -218,6 +222,8 @@
     <ClInclude Include="..\..\core\kissshot.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\core\base\math\KSVector3.cpp" />
+    <ClCompile Include="..\..\core\base\math\KSVector4.cpp" />
     <ClCompile Include="..\..\util\KSDebug.cpp" />
     <ClCompile Include="..\..\util\KSStorage.cpp" />
     <ClCompile Include="..\..\util\KSStringUtil.cpp" />

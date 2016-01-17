@@ -16,6 +16,12 @@
     <ClCompile Include="..\..\util\KSStringUtil.cpp">
       <Filter>util</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\base\math\KSVector3.cpp">
+      <Filter>core\base\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\base\math\KSVector4.cpp">
+      <Filter>core\base\math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\base\KSScene.h">
@@ -43,6 +49,18 @@
     <ClInclude Include="..\..\util\KSStringUtil.h">
       <Filter>util</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\core\base\math\KSMathMacro.h">
+      <Filter>core\base\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\base\math\KSMatrix4x4.h">
+      <Filter>core\base\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\base\math\KSVector3.h">
+      <Filter>core\base\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\base\math\KSVector4.h">
+      <Filter>core\base\math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="core">
@@ -62,6 +80,9 @@
     </Filter>
     <Filter Include="util\platform">
       <UniqueIdentifier>{588302d3-5fef-4770-baca-426ab682f82e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\base\math">
+      <UniqueIdentifier>{4609737d-c76b-4e0d-bdd6-8e0561cb69c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

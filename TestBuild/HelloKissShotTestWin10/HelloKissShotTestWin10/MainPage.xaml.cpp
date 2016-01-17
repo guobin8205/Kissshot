@@ -22,8 +22,13 @@ using namespace Windows::UI::Xaml::Navigation;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
+
 MainPage::MainPage()
 {
 	InitializeComponent();
-	KSLOG(L"这是中文哦 \n%s \n%s",L"It is English.",L"日本語です");
+	kissshot::math::Vector3 vec({ 10.0f,20.0f,30.0f });
+	kissshot::math::Vector3 vec2({ 10.0f,20.0f,30.0f });
+	auto temp =kissshot::math::MtxTransform(10, 20, 30);
+	vec *= temp;
+	int a = 30;
 }

@@ -5,7 +5,7 @@ KS_BEGIN
 ::std::string util::WString2String(const std::wstring & str)
 {
 	size_t size = str.length() * 2 + 1U;
-	int len = 0;
+	size_t len = 0;
 	char* out = nullptr;
 	while (true)
 	{
@@ -27,7 +27,7 @@ KS_BEGIN
 ::std::wstring util::String2WString(const std::string & str)
 {
 	size_t size = str.length() * 2 + 1U;
-	int len = 0;
+	size_t len = 0;
 	wchar_t* out = nullptr;
 	while (true)
 	{

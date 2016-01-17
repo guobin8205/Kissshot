@@ -222,12 +222,12 @@
     <ClInclude Include="..\..\core\kissshot.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\core\base\math\KSMatrix4x4.cpp" />
     <ClCompile Include="..\..\core\base\math\KSVector3.cpp" />
     <ClCompile Include="..\..\core\base\math\KSVector4.cpp" />
     <ClCompile Include="..\..\util\KSDebug.cpp" />
     <ClCompile Include="..\..\util\KSStorage.cpp" />
     <ClCompile Include="..\..\util\KSStringUtil.cpp" />
-    <ClCompile Include="..\..\core\base\KSMath.cpp" />
     <ClCompile Include="..\..\core\base\KSTransform.cpp" />
   </ItemGroup>
   <ItemGroup>

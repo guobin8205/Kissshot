@@ -20,14 +20,14 @@ inline Vector4 & Vector4::operator=(const Vector3 & vec3)
 	return *this;
 }
 
-KS_DLL Vector4 operator*(const Vector4 & first, const Matrix4x4 & second)
+Vector4 operator*(const Vector4 & first, const Matrix4x4 & second)
 {
 	Vector4 vec;
 	bx::vec4MulMtx(vec.vector, first.vector, second.matrix);
 	return vec;
 }
 
-KS_DLL Vector4 & operator*=(Vector4 & first, const Matrix4x4 & second)
+Vector4 & operator*=(Vector4 & first, const Matrix4x4 & second)
 {
 	bx::vec4MulMtx(first.vector, first.vector, second.matrix);
 	return first;

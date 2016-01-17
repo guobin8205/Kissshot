@@ -9,6 +9,7 @@
 KS_MATH_BEGIN
 
 class Vector3;
+class Matrix4x4;
 
 class KS_DLL Vector4 final
 {
@@ -25,22 +26,46 @@ public:
 	}
 	Vector4(const Vector3 &vec);
 
+	///this function will change this;
+	///return *this
 	inline Vector4& normalizing(void)
 	{
 		bx::quatNorm(vector, vector);
 		return *this;
 	}
 
+	///this function will change this;
+	///return *this
 	inline Vector4& invert(void)
 	{
 		bx::quatInvert(vector, vector);
 		return *this;
 	}
 
+	///this function will change this;
+	///return *this
 	inline Vector4& absoulte(void)
 	{
 		x = bx::fabsolute(x); y = bx::fabsolute(y); z = bx::fabsolute(z); w = bx::fabsolute(w);
 		return *this;
+	}
+
+	inline Vector4 getNormalizing(void)
+	{
+		Vector4 res = *this;
+		return res.normalizing();
+	}
+
+	inline Vector4 getInvert(void)
+	{
+		Vector4 res = *this;
+		return res.invert();
+	}
+
+	inline Vector4 getAbsoulte(void) const
+	{
+		Vector4 res = *this;
+		return res.absoulte();
 	}
 
 	inline Vector4& scale(float xx, float yy = 1.0f, float zz = 1.0f, float ww = 1.0f)
@@ -48,7 +73,6 @@ public:
 		x *= xx; y *= yy; z *= zz; w *= ww;
 		return *this;
 	}
-
 
 	inline Vector4& scale(const Vector4& s)
 	{
@@ -77,7 +101,7 @@ public:
 #define OPERATOR_PARAMETER_NUM_UNCONST Vector4& first, const float num
 #define KS_MATH_GET_DEV float xx = first.x - second.x, yy = first.y - second.y, zz = first.z - second.z, ww = first.w - second.w
 
-inline KS_DLL bool operator == (OPERATOR_PARAMETER)
+inline bool operator == (OPERATOR_PARAMETER)
 {
 	KS_MATH_GET_DEV;
 	return bx::fabsolute(xx) <= KS_MATH_COMPARE_DEV
@@ -86,7 +110,7 @@ inline KS_DLL bool operator == (OPERATOR_PARAMETER)
 		&& bx::fabsolute(ww) <= KS_MATH_COMPARE_DEV;
 }
 
-inline KS_DLL bool operator < (OPERATOR_PARAMETER)
+inline bool operator < (OPERATOR_PARAMETER)
 {
 	KS_MATH_GET_DEV;
 	return (xx < -KS_MATH_COMPARE_DEV)
@@ -95,7 +119,7 @@ inline KS_DLL bool operator < (OPERATOR_PARAMETER)
 		|| (xx <= KS_MATH_COMPARE_DEV && xx >= -KS_MATH_COMPARE_DEV && yy <= KS_MATH_COMPARE_DEV && yy >= -KS_MATH_COMPARE_DEV && zz <= KS_MATH_COMPARE_DEV && zz >= -KS_MATH_COMPARE_DEV && ww < -KS_MATH_COMPARE_DEV);
 }
 
-inline KS_DLL bool operator > (OPERATOR_PARAMETER)
+inline bool operator > (OPERATOR_PARAMETER)
 {
 	KS_MATH_GET_DEV;
 	return (xx > KS_MATH_COMPARE_DEV)
@@ -104,17 +128,17 @@ inline KS_DLL bool operator > (OPERATOR_PARAMETER)
 		|| (xx <= KS_MATH_COMPARE_DEV && xx >= -KS_MATH_COMPARE_DEV && yy <= KS_MATH_COMPARE_DEV && yy >= -KS_MATH_COMPARE_DEV && zz <= KS_MATH_COMPARE_DEV && zz >= -KS_MATH_COMPARE_DEV && ww > KS_MATH_COMPARE_DEV);;
 }
 
-inline KS_DLL bool operator <= (OPERATOR_PARAMETER)
+inline bool operator <= (OPERATOR_PARAMETER)
 {
 	return (first < second) || (first == second);
 }
 
-inline KS_DLL bool operator >= (OPERATOR_PARAMETER)
+inline bool operator >= (OPERATOR_PARAMETER)
 {
 	return (first > second) || (first == second);
 }
 
-inline KS_DLL Vector4 operator + (OPERATOR_PARAMETER)
+inline Vector4 operator + (OPERATOR_PARAMETER)
 {
 	Vector4 vec;
 	vec.x = first.x + second.x;
@@ -124,7 +148,7 @@ inline KS_DLL Vector4 operator + (OPERATOR_PARAMETER)
 	return vec;
 }
 
-inline KS_DLL Vector4 operator + (OPERATOR_PARAMETER_NUM)
+inline Vector4 operator + (OPERATOR_PARAMETER_NUM)
 {
 	Vector4 vec;
 	vec.x = first.x + num;
@@ -134,7 +158,7 @@ inline KS_DLL Vector4 operator + (OPERATOR_PARAMETER_NUM)
 	return vec;
 }
 
-inline KS_DLL Vector4 operator - (OPERATOR_PARAMETER)
+inline Vector4 operator - (OPERATOR_PARAMETER)
 {
 	Vector4 vec;
 	vec.x = first.x - second.x;
@@ -144,7 +168,7 @@ inline KS_DLL Vector4 operator - (OPERATOR_PARAMETER)
 	return vec;
 }
 
-inline KS_DLL Vector4 operator - (OPERATOR_PARAMETER_NUM)
+inline Vector4 operator - (OPERATOR_PARAMETER_NUM)
 {
 	Vector4 vec;
 	vec.x = first.x - num;
@@ -155,14 +179,14 @@ inline KS_DLL Vector4 operator - (OPERATOR_PARAMETER_NUM)
 }
 
 //cross mul
-inline KS_DLL Vector4 operator * (OPERATOR_PARAMETER)
+inline Vector4 operator * (OPERATOR_PARAMETER)
 {
 	Vector4 vec;
 	bx::quatMul(vec.vector, first.vector, second.vector);
 	return vec;
 }
 
-inline KS_DLL Vector4 operator * (OPERATOR_PARAMETER_NUM)
+inline Vector4 operator * (OPERATOR_PARAMETER_NUM)
 {
 	Vector4 vec;
 	vec.x = first.x * num;
@@ -172,7 +196,7 @@ inline KS_DLL Vector4 operator * (OPERATOR_PARAMETER_NUM)
 	return vec;
 }
 
-inline KS_DLL Vector4& operator += (OPERATOR_PARAMETER_UNCONST)
+inline Vector4& operator += (OPERATOR_PARAMETER_UNCONST)
 {
 	first.x = first.x + second.x;
 	first.y = first.y + second.x;
@@ -181,7 +205,7 @@ inline KS_DLL Vector4& operator += (OPERATOR_PARAMETER_UNCONST)
 	return first;
 }
 
-inline KS_DLL Vector4& operator += (OPERATOR_PARAMETER_NUM_UNCONST)
+inline Vector4& operator += (OPERATOR_PARAMETER_NUM_UNCONST)
 {
 	first.x = first.x + num;
 	first.y = first.y + num;
@@ -190,7 +214,7 @@ inline KS_DLL Vector4& operator += (OPERATOR_PARAMETER_NUM_UNCONST)
 	return first;
 }
 
-inline KS_DLL Vector4& operator -= (OPERATOR_PARAMETER_UNCONST)
+inline Vector4& operator -= (OPERATOR_PARAMETER_UNCONST)
 {
 	first.x = first.x - second.x;
 	first.y = first.y - second.x;
@@ -199,7 +223,7 @@ inline KS_DLL Vector4& operator -= (OPERATOR_PARAMETER_UNCONST)
 	return first;
 }
 
-inline KS_DLL Vector4& operator -= (OPERATOR_PARAMETER_NUM_UNCONST)
+inline Vector4& operator -= (OPERATOR_PARAMETER_NUM_UNCONST)
 {
 	first.x = first.x - num;
 	first.y = first.y - num;
@@ -209,13 +233,13 @@ inline KS_DLL Vector4& operator -= (OPERATOR_PARAMETER_NUM_UNCONST)
 }
 
 //cross mul
-inline KS_DLL Vector4& operator *= (Vector4& first, const Vector4& second)
+inline Vector4& operator *= (Vector4& first, const Vector4& second)
 {
 	bx::quatMul(first.vector, first.vector, second.vector);
 	return first;
 }
 
-inline KS_DLL Vector4& operator *= (OPERATOR_PARAMETER_NUM_UNCONST)
+inline Vector4& operator *= (OPERATOR_PARAMETER_NUM_UNCONST)
 {
 	first.x = first.x * num;
 	first.y = first.y * num;
@@ -227,6 +251,11 @@ inline KS_DLL Vector4& operator *= (OPERATOR_PARAMETER_NUM_UNCONST)
 KS_DLL Vector4 operator * (const Vector4& first, const Matrix4x4& second);
 KS_DLL Vector4& operator *= (Vector4& first, const Matrix4x4& second);
 
+#undef OPERATOR_PARAMETER
+#undef OPERATOR_PARAMETER_NUM
+#undef OPERATOR_PARAMETER_UNCONST
+#undef OPERATOR_PARAMETER_NUM_UNCONST
+#undef KS_MATH_GET_DEV
 
 KS_MATH_END
 

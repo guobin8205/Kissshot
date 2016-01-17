@@ -26,9 +26,4 @@ using namespace Windows::UI::Xaml::Navigation;
 MainPage::MainPage()
 {
 	InitializeComponent();
-	kissshot::math::Vector3 vec({ 10.0f,20.0f,30.0f });
-	kissshot::math::Vector3 vec2({ 10.0f,20.0f,30.0f });
-	auto temp =kissshot::math::MtxTransform(10, 20, 30);
-	vec *= temp;
-	int a = 30;
 }

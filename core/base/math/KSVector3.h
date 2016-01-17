@@ -36,6 +36,18 @@ public:
 		return *this;
 	}
 
+	inline Vector3& scale(float xx, float yy = 1.0f, float zz = 1.0f)
+	{
+		x *= xx; y *= yy; z *= zz;
+		return *this;
+	}
+
+	inline Vector3& scale(const Vector3& s)
+	{
+		x *= s.x; y *= s.y; z *= s.z;
+		return *this;
+	}
+
 	inline Vector3& set(float xx, float yy, float zz) { x = xx; y = yy; z = zz; return *this; }
 
 	inline float length(void) { return bx::vec3Length(vector); }
@@ -162,11 +174,12 @@ inline KS_DLL Vector3& operator *= (Vector3& first, const Vector3& second)
 	return first;
 }
 
-inline KS_DLL Vector3& operator * (OPERATOR_PARAMETER_NUM_UNCONST)
+inline KS_DLL Vector3& operator *= (OPERATOR_PARAMETER_NUM_UNCONST)
 {
 	bx::vec3Mul(first.vector, first.vector, num);
 	return first;
 }
+
 
 KS_DLL Vector3 operator * (const Vector3& first, const Matrix4x4& second);
 KS_DLL Vector3 operator * (const Vector3& first, const Vector4& second);

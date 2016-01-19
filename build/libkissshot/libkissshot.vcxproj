@@ -211,7 +211,7 @@
     <ClInclude Include="..\..\core\base\math\KSMatrix4x4.h" />
     <ClInclude Include="..\..\core\base\math\KSVector3.h" />
     <ClInclude Include="..\..\core\base\math\KSVector4.h" />
-    <ClInclude Include="..\..\KSMacro.h" />
+    <ClInclude Include="..\..\core\KSMacro.h" />
     <ClInclude Include="..\..\util\KSDebug.h" />
     <ClInclude Include="..\..\util\KSStorage.h" />
     <ClInclude Include="..\..\util\KSStringUtil.h" />

@@ -4,7 +4,6 @@
 #define __KISSSHOT__ENGINE__MATH__VECTOR3__
 
 #include "KSMathMacro.h"
-#include "KSMacro.h"
 #include <bx/fpumath.h>
 #include <memory>
 

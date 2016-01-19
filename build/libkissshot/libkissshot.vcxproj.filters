@@ -64,7 +64,9 @@
     <ClInclude Include="..\..\util\KSUtilMacro.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\KSMacro.h" />
+    <ClInclude Include="..\..\core\KSMacro.h">
+      <Filter>core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="core">

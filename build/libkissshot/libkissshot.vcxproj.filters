@@ -10,9 +10,6 @@
     <ClCompile Include="..\..\util\KSStorage.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\util\KSStringUtil.cpp">
-      <Filter>util</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\core\base\math\KSVector3.cpp">
       <Filter>core\base\math</Filter>
     </ClCompile>
@@ -21,6 +18,9 @@
     </ClCompile>
     <ClCompile Include="..\..\core\base\math\KSMatrix4x4.cpp">
       <Filter>core\base\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\util\KSStringUtil-winrt.cpp">
+      <Filter>util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -38,9 +38,6 @@
     </ClInclude>
     <ClInclude Include="..\..\core\kissshot.h" />
     <ClInclude Include="..\..\util\KSDebug.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\util\KSMacro.h">
       <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\util\KSStorage.h">
@@ -61,6 +58,13 @@
     <ClInclude Include="..\..\core\base\math\KSVector4.h">
       <Filter>core\base\math</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\util\KSUtil.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\util\KSUtilMacro.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\KSMacro.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="core">
@@ -77,9 +81,6 @@
     </Filter>
     <Filter Include="util">
       <UniqueIdentifier>{3f546c4c-2e69-458d-be0a-cbb57c0d0d5e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="util\platform">
-      <UniqueIdentifier>{588302d3-5fef-4770-baca-426ab682f82e}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\base\math">
       <UniqueIdentifier>{4609737d-c76b-4e0d-bdd6-8e0561cb69c9}</UniqueIdentifier>

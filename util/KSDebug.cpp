@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdarg.h>
-KS_BEGIN
+KS_UTIL_BEGIN
 
 static size_t MAX_LOG_LENGTH = 16 * 1024;
 
@@ -42,4 +42,4 @@ void KS_DLL log(const wchar_t * msg, ...)
 	va_end(args);
 }
 
-KS_END
+KS_UTIL_END

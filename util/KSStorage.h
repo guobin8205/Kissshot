@@ -1,34 +1,34 @@
 #pragma once
 
-#ifndef __KISSHOT__ENGINE__STORAGE__
-#define __KISSHOT__ENGINE__STORAGE__
-#include "KSMacro.h"
+#ifndef __KISSHOT__ENGINE__UTIL__STORAGE__
+#define __KISSHOT__ENGINE__UTIL__STORAGE__
+#include "KSUtilMacro.h"
 #include <string>
 #include <vector>
-KS_BEGIN
+#include <memory>
 
+KS_UTIL_BEGIN
 class KS_DLL Data final
 {
 public:
 	Data(void)
-		:Data(nullptr, 0){}
+		:Data(nullptr, 0) {}
 	Data(unsigned char* data, size_t size)
-		:mData(data)
-		,mSize(size)
+		: mData(data)
+		, mSize(size)
 	{}
 	~Data()
 	{
 		reset();
 	}
 
-	inline void reset(unsigned char* data = nullptr,size_t size = 0U)
+	inline void reset(unsigned char* data = nullptr, size_t size = 0U)
 	{
-		size = 0;
-		KS_SAFE_FREE(mData);
-		mData = data;
+		size = size;
+		mData.reset(data);
 	}
 private:
-	unsigned char* mData;
+	std::shared_ptr<unsigned char> mData;
 	size_t mSize;
 };
 
@@ -55,12 +55,11 @@ public:
 
 private:
 	bool _init(void);
-	
+
 
 private:
 	std::vector<std::wstring> mPaths;
 };
-
-KS_END
+KS_UTIL_END
 
 #endif

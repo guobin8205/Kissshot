@@ -5,17 +5,15 @@
 #if KS_PLATFORM_WINRT
 #include <Windows.h>
 #include <ppltasks.h>
-#endif
 
-KS_BEGIN
-
+KS_UTIL_BEGIN
 static Storage* _instance = nullptr;
 Storage * Storage::getInstance(void)
 {
 	if (!_instance)
 	{
 		_instance = new Storage();
-		
+
 	}
 	return _instance;
 }
@@ -27,11 +25,17 @@ void Storage::destoryInstance(void)
 
 void Storage::addSearchPath(const std::wstring path)
 {
-	auto& itor = std::find(mPaths.begin(), mPaths.end(), path);
+	auto ipath = path;
+	auto head = ipath[0], end = *(ipath.end() - 1);
+	if (head != L'\\' || head != L'/')
+		ipath.insert(ipath.begin(), L'/');
+	if (end != L'\\' || end != L'/')
+		ipath += L'/';
+	auto& itor = std::find(mPaths.begin(), mPaths.end(), ipath);
 	if (itor != mPaths.end())
 		KSLOG(L"KS Warmming: search path <%s> is exist.", path.c_str());
 	else
-		mPaths.push_back(path);
+		mPaths.push_back(ipath);
 }
 
 bool Storage::isFileExist(const std::wstring & file)
@@ -61,7 +65,7 @@ bool Storage::getFullPathWithFileName(const std::wstring& file, std::wstring& ou
 		for (auto& search : mPaths)
 		{
 			fullpath = fs + search + file;
-			if (fd = fopen(KS_W2A(fullpath).c_str(), "rd"))
+			if (fd = fopen(KS_W2A(fullpath).c_str(), "r"))
 			{
 				output = fullpath;
 				fclose(fd);
@@ -72,7 +76,7 @@ bool Storage::getFullPathWithFileName(const std::wstring& file, std::wstring& ou
 		for (auto& search : mPaths)
 		{
 			fullpath = ss + search + file;
-			if (fd = fopen(KS_W2A(fullpath).c_str(), "rd"))
+			if (fd = fopen(KS_W2A(fullpath).c_str(), "r"))
 			{
 				output = fullpath;
 				fclose(fd);
@@ -91,9 +95,9 @@ Data Storage::getDataFromFile(const std::wstring & file)
 	if (!getFullPathWithFileName(file, fullpath)) return data;
 
 	FILE* fd = nullptr;
-	fd = fopen(KS_W2A(fullpath.c_str()).c_str(),"rd");
-	KSASSERT(!fd);
-	
+	fd = fopen(KS_W2A(fullpath.c_str()).c_str(), "rb");
+	KSASSERT(fd);
+
 	size_t size = 0;
 	fseek(fd, 0, SEEK_END);
 	size = ftell(fd);
@@ -112,7 +116,6 @@ bool Storage::_init(void)
 	return false;
 }
 
-#if KS_PLATFORM_WINRT
 std::wstring Storage::getWritablePath(void)
 {
 	Windows::Storage::ApplicationData::Current->LocalFolder->Path;
@@ -138,7 +141,7 @@ bool Storage::isAbsolutePath(const std::wstring & path)
 
 bool Storage::createFolderInWritablePath(const std::wstring & path)
 {
-	
+
 	return false;
 }
 
@@ -146,6 +149,8 @@ bool Storage::deleteFileWithPath(const std::wstring & file)
 {
 	return false;
 }
+KS_UTIL_END
+
 #endif
-KS_END
+
 

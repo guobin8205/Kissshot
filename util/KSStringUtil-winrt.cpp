@@ -1,7 +1,6 @@
 #include "KSStringUtil.h"
-KS_BEGIN
 
-
+KS_UTIL_BEGIN
 ::std::string util::WString2String(const std::wstring & str)
 {
 	size_t size = str.length() * 2 + 1U;
@@ -46,4 +45,4 @@ KS_BEGIN
 	return ret;
 }
 
-KS_END
+KS_UTIL_END

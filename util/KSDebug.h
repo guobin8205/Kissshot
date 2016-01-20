@@ -16,9 +16,9 @@ KS_UTIL_END
 
 
 #if KISSSHOT_DEBUG
-#define KSLOG(msg,...) ::kissshot::util::log(msg, ##__VA_ARGS__)
-#define KSBREAK(comp) if(!!(comp)) ::bx::util::debugBreak()
-#define KSWARMING(comp,msg,...) if(!!(comp)) ::kissshot::util::log(msg,##__VA_ARGS__)
+#define KSLOG(msg,...) KS_UTIL::log(msg, ##__VA_ARGS__)
+#define KSBREAK(comp) if(!!(comp)) KS_UTIL::debugBreak()
+#define KSWARMING(comp,msg,...) if(!!(comp)) KS_UTIL::log(msg,##__VA_ARGS__)
 #define KSASSERT(comp) assert((comp))
 #else
 #define KSLOG(msg,...)

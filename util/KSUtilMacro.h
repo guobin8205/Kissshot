@@ -4,9 +4,10 @@
 
 #include "..\core\KSMacro.h"
 
-#define KS_UTIL_BEGIN namespace kissshot{namespace util{
-#define KS_UTIL_END	}}
 
-#define KS_USE_UTIL using namespace kissshot::util
+#define KS_UTIL_BEGIN namespace kissshot{namespace utils{
+#define KS_UTIL_END	}}
+#define KS_UTIL	::kissshot::utils
+#define KS_USE_UTIL using namespace ::kissshot::utils
 
 #endif

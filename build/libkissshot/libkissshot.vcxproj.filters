@@ -7,9 +7,6 @@
     <ClCompile Include="..\..\util\KSDebug.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\util\KSStorage.cpp">
-      <Filter>util</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\core\base\math\KSVector3.cpp">
       <Filter>core\base\math</Filter>
     </ClCompile>
@@ -19,7 +16,10 @@
     <ClCompile Include="..\..\core\base\math\KSMatrix4x4.cpp">
       <Filter>core\base\math</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\util\KSStringUtil-winrt.cpp">
+    <ClCompile Include="..\..\util\KSStringUtil.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\util\KSStorage-winrt.cpp">
       <Filter>util</Filter>
     </ClCompile>
   </ItemGroup>

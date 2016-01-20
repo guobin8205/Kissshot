@@ -231,12 +231,12 @@
     <ClCompile Include="..\..\core\base\math\KSVector3.cpp" />
     <ClCompile Include="..\..\core\base\math\KSVector4.cpp" />
     <ClCompile Include="..\..\util\KSDebug.cpp" />
-    <ClCompile Include="..\..\util\KSStorage.cpp" />
-    <ClCompile Include="..\..\util\KSStringUtil-winrt.cpp" />
+    <ClCompile Include="..\..\util\KSStorage-winrt.cpp" />
+    <ClCompile Include="..\..\util\KSStringUtil.cpp" />
     <ClCompile Include="..\..\core\base\KSTransform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\external\bgfx\.build\projects\vs2015-winstore82\bgfx.vcxproj">
+    <ProjectReference Include="..\..\external\libbgfx\libbgfx-winrt.vcxproj">
       <Project>{6c90947c-58c7-950d-01b4-7b10edc9110f}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

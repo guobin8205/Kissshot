@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloKissShotTestWin10", "H
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libkissshot", "..\..\build\libkissshot\libkissshot.vcxproj", "{E2E7BE36-B10B-4F0E-8E2C-636D8077DB4F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bgfx", "..\..\external\bgfx\.build\projects\vs2015-winstore82\bgfx.vcxproj", "{6C90947C-58C7-950D-01B4-7B10EDC9110F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbgfx-winrt", "..\..\external\libbgfx\libbgfx-winrt.vcxproj", "{6C90947C-58C7-950D-01B4-7B10EDC9110F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

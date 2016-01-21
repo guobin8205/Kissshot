@@ -6,5 +6,5 @@
 
 #include "bgfx/include/bgfx/bgfx.h"
 #include "bgfx/include/bgfx/bgfxplatform.h"
-#include "entry/KSEntry.h"
+
 #endif

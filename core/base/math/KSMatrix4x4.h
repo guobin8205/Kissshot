@@ -3,7 +3,6 @@
 #ifndef __KISSSHOT__ENGINE__MATH__MATRIX4X4__
 #define __KISSSHOT__ENGINE__MATH__MATRIX4X4__
 #include "KSMathMacro.h"
-#include <bx/fpumath.h>
 #include <memory>
 
 KS_MATH_BEGIN

@@ -2,7 +2,7 @@
 
 #ifndef __KISSSHOT__ENGINE__MACRO__
 #define __KISSSHOT__ENGINE__MACRO__
-#include "bx/platform.h"
+#include "../external/bx/include/bx/platform.h"
 
 #define KS_PLATFORM_ANDROID		BX_PLATFORM_ANDROID
 #define KS_PLATFORM_IOS			BX_PLATFORM_IOS

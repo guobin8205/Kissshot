@@ -4,6 +4,8 @@
 #define __KISSSHOT__ENGINE__MATHMACRO__
 #include "../../KSMacro.h"
 
+#include "../../../external/bx/include/bx/fpumath.h"
+
 #define KS_MATH_BEGIN namespace kissshot{ namespace math {
 #define KS_MATH_END }}
 

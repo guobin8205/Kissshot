@@ -6,7 +6,7 @@
 
 #include "KSUtilMacro.h"
 #if KISSSHOT_DEBUG
-#include "bx/debug.h"
+#include "../external/bx/include/bx/debug.h"
 #include <assert.h>
 #endif
 

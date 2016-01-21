@@ -1,7 +1,7 @@
 #include "KSStringUtil.h"
 
 KS_UTIL_BEGIN
-::std::string util::WString2String(const std::wstring & str)
+::std::string utils::WString2String(const std::wstring & str)
 {
 	size_t size = str.length() * 2 + 1U;
 	size_t len = 0;
@@ -23,7 +23,7 @@ KS_UTIL_BEGIN
 	return ret;
 }
 
-::std::wstring util::String2WString(const std::string & str)
+::std::wstring utils::String2WString(const std::string & str)
 {
 	size_t size = str.length() * 2 + 1U;
 	size_t len = 0;

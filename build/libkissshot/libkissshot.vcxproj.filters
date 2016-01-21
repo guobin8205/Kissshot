@@ -67,6 +67,9 @@
     <ClInclude Include="..\..\core\KSMacro.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\external\KSExternal.h">
+      <Filter>external</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="core">
@@ -86,6 +89,9 @@
     </Filter>
     <Filter Include="core\base\math">
       <UniqueIdentifier>{4609737d-c76b-4e0d-bdd6-8e0561cb69c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{f8d9b9ef-4baa-4989-b2f5-3a8e501de45f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

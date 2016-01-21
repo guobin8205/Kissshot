@@ -8,5 +8,7 @@
 #include "base/KSTransform.h"
 #include "base/KSEntity.h"
 
+#include "../external/KSExternal.h"
+
 
 #endif

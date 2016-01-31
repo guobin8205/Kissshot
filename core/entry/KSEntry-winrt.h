@@ -13,6 +13,7 @@ namespace kissshot
 		// IFrameworkView 方法。
 		virtual void Initialize(Windows::ApplicationModel::Core::CoreApplicationView^ applicationView);
 		virtual void SetWindow(Windows::UI::Core::CoreWindow^ window);
+		void OnPointMoved(Windows::UI::Core::CoreWindow^ window,Windows::UI::Core::PointerEventArgs ^ args);
 		virtual void Load(Platform::String^ entryPoint);
 		virtual void Run();
 		virtual void Uninitialize();

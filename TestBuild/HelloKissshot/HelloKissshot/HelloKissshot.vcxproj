@@ -203,11 +203,6 @@
     <Image Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\external\entry\KSEntry-winrt.h" />
-    <ClInclude Include="..\..\..\external\entry\KSEntry.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\external\entry\KSEntry-winrt.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -220,10 +215,6 @@
     <ProjectReference Include="..\..\..\build\libkissshot\libkissshot.vcxproj">
       <Project>{e2e7be36-b10b-4f0e-8e2c-636d8077db4f}</Project>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\external\libbgfx\libbgfx-winrt.vcxproj">
-      <Project>{6c90947c-58c7-950d-01b4-7b10edc9110f}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

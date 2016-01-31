@@ -19,9 +19,6 @@
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
       <Filter>assets</Filter>
     </Image>
-    <Filter Include="entry">
-      <UniqueIdentifier>{aa418359-8264-47ce-a45d-b679263ca4b5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="assets">
       <UniqueIdentifier>6ab64ca7-af07-4793-b14b-ccaadbb07d77</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
@@ -29,17 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="..\..\..\external\entry\KSEntry-winrt.cpp">
-      <Filter>entry</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\external\entry\KSEntry-winrt.h">
-      <Filter>entry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\external\entry\KSEntry.h">
-      <Filter>entry</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\StoreLogo.png">

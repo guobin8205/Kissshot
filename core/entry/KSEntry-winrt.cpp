@@ -69,6 +69,8 @@ void Entry::SetWindow(CoreWindow^ window)
 	window->Closed += 
 		ref new TypedEventHandler<CoreWindow^, CoreWindowEventArgs^>(this, &Entry::OnWindowClosed);
 
+	window->PointerMoved += 
+		ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &Entry::OnPointMoved);
 
 	DisplayInformation^ currentDisplayInformation = DisplayInformation::GetForCurrentView();
 
@@ -81,6 +83,11 @@ void Entry::SetWindow(CoreWindow^ window)
 	DisplayInformation::DisplayContentsInvalidated +=
 		ref new TypedEventHandler<DisplayInformation^, Object^>(this, &Entry::OnDisplayContentsInvalidated);
 	bgfx::winrtSetWindow(reinterpret_cast<IUnknown*>(window));
+}
+
+void Entry::OnPointMoved(CoreWindow^ window, PointerEventArgs^ args)
+{
+
 }
 
 // 初始化场景资源或加载之前保存的应用程序状态。
@@ -98,7 +105,6 @@ void Entry::Run()
 {
 	bx::Thread thread;
 	thread.init(MainThreadFunc, nullptr);
-
 	while (!m_windowClosed)
 	{
 		if (m_windowVisible)

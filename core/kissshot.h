@@ -7,6 +7,7 @@
 #include "base/KSMath.h"
 #include "base/KSTransform.h"
 #include "base/KSEntity.h"
+#include "entry/KSEntry.h"
 
 #include "../external/KSExternal.h"
 

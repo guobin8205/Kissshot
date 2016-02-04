@@ -1,6 +1,6 @@
 [submodule "bgfx"]
-	path = external/bgfx
+	path = kissshot/external/bgfx
 	url = https://github.com/KUNAGISA/bgfx.git
 [submodule "bx"]
-	path = external/bx
+	path = kissshot/external/bx
 	url = https://github.com/KUNAGISA/bx.git

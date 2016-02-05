@@ -7,26 +7,27 @@
 #include <unordered_map>
 #include <atomic>
 #include <memory>
-#include "../../base/KSTransform.h"
+#include "KSContainerMacro.h"
 #include "../components/KSIComponent.h"
 
-KS_BEGIN
-
-class Transform;
+KS_CORE_CONTAINER_BEGIN
 
 class KS_DLL Entity final
 {
 public:
 	typedef std::unordered_multimap<size_t, std::shared_ptr<component::IComponent>> ComponentMap;
 	Entity(void) {};
-	~Entity(void) {};
+	~Entity(void)
+	{
+		mComponents.clear();
+	};
 	
 	template<typename T>
 	std::shared_ptr<T> addComponent(void)
 	{
 		static_assert(::std::is_base_of<component::IComponent, T>::value, "T must base of compnent::IComponent");
 
-		std::shared_ptr<T> ptr(new T());
+		std::shared_ptr<T> ptr(new T(*this));
 		mComponents.insert(ComponentMap::value_type(typeid(T).hash_code(), std::static_pointer_cast<component::IComponent,T>(ptr)));
 		return ptr;
 	}
@@ -46,10 +47,11 @@ public:
 	{
 		static_assert(::std::is_base_of<component::IComponent, T>::value, "T must base of compnent::IComponent");
 
-		size_t length = 0;
-		length = mComponents.count(typeid(T).hash_code());
-		if (length)
+		size_t count = 0;
+		count = mComponents.count(typeid(T).hash_code());
+		if (count)
 			out = mComponents.find(typeid(T).hash_code());
+		return count;
 	}
 
 	template<typename T>
@@ -77,13 +79,15 @@ public:
 		}
 	}
 
+	inline KS_BASE::Transform& Transform() { return mTransform; }
+	inline KS_MATH::Matrix4x4 getMatrix() { return mTransform.getMatrix(); }
 private:
-	Transform mTransform;
+	KS_BASE::Transform mTransform;
 	ComponentMap mComponents;
 	
 };
 
-KS_END
+KS_CORE_CONTAINER_END
 
 
 #endif

@@ -35,6 +35,8 @@
 #define KS_BEGIN	namespace kissshot {
 #define KS_END		}
 
+#define KS_NS ::kissshot
+
 #if !defined(KS_DEBUG) && (defined(_DEBUG) || defined(DEBUG) || defined(__DEBUG)  || defined(_DEBUG_))
 #define KS_DEBUG 1
 #endif

@@ -3,14 +3,11 @@
 #ifndef __KISSSHOT__ENGINE__TRANSFORM__
 #define __KISSSHOT__ENGINE__TRANSFORM__
 
-#include "KSMacro.h"
+#include "KSBaseMacro.h"
+#include "KSMath.h"
 #include <atomic>
 
-KS_BEGIN
-namespace math {
-	class Vector3;
-	class Matrix4x4;
-};
+KS_BASE_BEGIN
 
 class KS_DLL Transform
 {
@@ -32,6 +29,6 @@ public:
 	math::Vector3 rotate;
 };
 
-KS_END
+KS_BASE_END
 
 #endif

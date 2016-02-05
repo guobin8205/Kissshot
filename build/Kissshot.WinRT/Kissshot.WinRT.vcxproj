@@ -219,17 +219,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\kissshot\base\KSBase.h" />
+    <ClInclude Include="..\..\kissshot\base\KSBaseMacro.h" />
     <ClInclude Include="..\..\kissshot\base\KSMath.h" />
     <ClInclude Include="..\..\kissshot\base\KSTransform.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSMathMacro.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSMatrix4x4.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSVector3.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSVector4.h" />
+    <ClInclude Include="..\..\kissshot\core\components\KSCamera.h" />
     <ClInclude Include="..\..\kissshot\core\components\KSComponentMacro.h" />
+    <ClInclude Include="..\..\kissshot\core\components\KSComponents.h" />
     <ClInclude Include="..\..\kissshot\core\components\KSIComponent.h" />
+    <ClInclude Include="..\..\kissshot\core\container\KSContainer.h" />
+    <ClInclude Include="..\..\kissshot\core\container\KSContainerMacro.h" />
     <ClInclude Include="..\..\kissshot\core\container\KSEntity.h" />
     <ClInclude Include="..\..\kissshot\core\container\KSScene.h" />
     <ClInclude Include="..\..\kissshot\core\KSCore.h" />
+    <ClInclude Include="..\..\kissshot\core\KSCoreMacro.h" />
     <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfx.h" />
     <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfxdefines.h" />
     <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfxplatform.h" />
@@ -283,6 +290,7 @@
     <ClCompile Include="..\..\kissshot\base\math\KSMatrix4x4.cpp" />
     <ClCompile Include="..\..\kissshot\base\math\KSVector3.cpp" />
     <ClCompile Include="..\..\kissshot\base\math\KSVector4.cpp" />
+    <ClCompile Include="..\..\kissshot\core\components\KSCamera.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\bgfx.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_egl.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_glx.cpp" />

@@ -77,6 +77,9 @@
     <ClCompile Include="..\..\kissshot\base\math\KSVector4.cpp">
       <Filter>base\math</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\kissshot\core\components\KSCamera.cpp">
+      <Filter>core\components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -244,6 +247,27 @@
     </ClInclude>
     <ClInclude Include="..\..\kissshot\core\KSCore.h">
       <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\KSCoreMacro.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\KSBase.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\KSBaseMacro.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\container\KSContainer.h">
+      <Filter>core\container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\container\KSContainerMacro.h">
+      <Filter>core\container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\components\KSCamera.h">
+      <Filter>core\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\components\KSComponents.h">
+      <Filter>core\components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

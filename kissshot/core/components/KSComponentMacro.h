@@ -3,11 +3,16 @@
 #ifndef __KISSSHOT__ENGINE__COMPONENT__MACRO__
 #define __KISSSHOT__ENGINE__COMPONENT__MACRO__
 
-#include "../KSMacro.h"
+#include "../KSCoreMacro.h"
 
-#define KS_COMPONENT_BEGIN namespace kissshot{namespace component{
-#define KS_COMPONENT_END }}
+#define KS_COMPONENT_BEGIN KS_CORE_BEGIN namespace component{
+#define KS_COMPONENT_END } KS_CORE_END
 
-#define KS_USE_COMPONENT using namespace ::kissshot::component
+#define KS_COMPONENT KS_CORE::component
+#define KS_USE_COMPONENT using namespace KS_COMPONENT
+
+#define KSComponentCtor(CLASS) \
+CLASS(void) = delete; \
+CLASS(::kissshot::core::container::Entity& owner)
 
 #endif

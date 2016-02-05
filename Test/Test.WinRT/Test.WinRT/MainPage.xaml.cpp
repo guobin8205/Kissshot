@@ -22,31 +22,21 @@ using namespace Windows::UI::Xaml::Navigation;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
-class TestComponent : public kissshot::component::IComponent
-{
-public:
-	void print() {};
-};
 
 MainPage::MainPage()
 {
 	InitializeComponent();
-	kissshot::Entity entity;
+	kissshot::core::container::Entity e;
+	e.addComponent<kissshot::core::component::IComponent>()->setTag(111);
 
-	entity.addComponent<kissshot::component::IComponent>()->setTag(100);
-	entity.addComponent<TestComponent>()->setTag(400);
-	entity.addComponent<TestComponent>()->setTag(200);
-	entity.addComponent<kissshot::component::IComponent>()->setTag(200);
-	entity.addComponent<kissshot::component::IComponent>()->setTag(300);
-	entity.addComponent<int>();
+	auto& owner = e.getComponent<kissshot::core::component::IComponent>()->getOwner();
 	int a = 10;
 
-	auto component = entity.getComponent<TestComponent>();
-	component->print();
+	owner.addComponent<kissshot::core::component::IComponent>()->setTag(222);
 
-	a = 30;
+	int b = 20;
 
-	entity.removeComponents<kissshot::component::IComponent>();
+	owner.removeComponent<kissshot::core::component::IComponent>(222);
 
-	a = 20;
+	int c = 30;
 }

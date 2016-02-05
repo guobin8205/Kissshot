@@ -3,7 +3,7 @@
 
 KS_USE_MATH;
 
-KS_BEGIN
+KS_BASE_BEGIN
 
 Transform::Transform()
 	: Transform(Vector3::Zero,Vector3::Identity, Vector3::Zero)
@@ -26,4 +26,4 @@ math::Matrix4x4 Transform::getMatrix()
 }
 
 
-KS_END
+KS_BASE_END

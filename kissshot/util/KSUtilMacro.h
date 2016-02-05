@@ -2,7 +2,7 @@
 #ifndef __KISSSHOT__ENGINE__UTIL__MACRO__
 #define __KISSSHOT__ENGINE__UTIL__MACRO__
 
-#include "..\core\KSMacro.h"
+#include "..\KSMacro.h"
 
 
 #define KS_UTIL_BEGIN namespace kissshot{namespace utils{

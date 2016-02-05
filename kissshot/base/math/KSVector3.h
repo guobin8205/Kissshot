@@ -16,7 +16,8 @@ class KS_DLL Vector3 final
 public:
 	Vector3(void) : x(vector[0]), y(vector[1]), z(vector[2]) { std::memset(vector, 0, sizeof(float) * 3); }
 	Vector3(const float(&ff)[3]) : Vector3() { bx::vec3Move(vector, ff); }
-
+	Vector3(float xx, float yy, float zz) : Vector3() { x = xx, y = yy, z = zz; }
+	Vector3(const Vector3& other) : Vector3() { *this = other; }
 	///this function will change this;
 	///return *this
 	inline Vector3& normalizing(void)
@@ -75,12 +76,19 @@ public:
 
 	inline float length(void) { return bx::vec3Length(vector); }
 	inline float dot(const Vector3& v2) { return bx::vec3Dot(vector, v2.vector); }
+	
+	inline Vector3& operator= (const Vector3& other)
+	{
+		x = other.x, y = other.y, z = other.z;
+		return *this; 
+	}
 
 public:
 	float &x, &y, &z;
 	float vector[3];
 
 	const static Vector3 Zero;
+	const static Vector3 Identity;
 };
 
 #define OPERATOR_PARAMETER  const Vector3& first, const Vector3& second

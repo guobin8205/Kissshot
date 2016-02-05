@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\bgfx.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_egl.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_glx.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_ppapi.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_wgl.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\image.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\ovr.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderdoc.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_d3d9.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_d3d11.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_d3d12.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_gl.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_null.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_vk.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_dx9bc.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_dxbc.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_spirv.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\vertexdecl.cpp">
+      <Filter>external\bgfx\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\util\KSDebug.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\util\KSStorage-winrt.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\util\KSStringUtil.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\base\KSTransform.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\base\math\KSMatrix4x4.cpp">
+      <Filter>base\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\base\math\KSVector3.cpp">
+      <Filter>base\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\base\math\KSVector4.cpp">
+      <Filter>base\math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfx.h">
+      <Filter>external\bgfx\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfxdefines.h">
+      <Filter>external\bgfx\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfxplatform.h">
+      <Filter>external\bgfx\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\bgfx_p.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\charset.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\config.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear0.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear1.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear2.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear3.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear4.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear5.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear6.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear7.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_debugfont.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_eagl.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_egl.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_glx.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_nsgl.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_ppapi.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_wgl.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glimports.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\image.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\ovr.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderdoc.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_d3d.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_d3d9.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_d3d11.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_d3d12.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_gl.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_mtl.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\shader_dx9bc.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\shader_dxbc.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\shader_spirv.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\vertexdecl.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\vs_clear.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\vs_debugfont.bin.h">
+      <Filter>external\bgfx\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\util\KSDebug.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\util\KSStorage.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\util\KSStringUtil.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\util\KSUtil.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\util\KSUtilMacro.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\kissshot.h" />
+    <ClInclude Include="..\..\kissshot\KSMacro.h" />
+    <ClInclude Include="..\..\kissshot\base\KSMath.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\KSTransform.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\math\KSMathMacro.h">
+      <Filter>base\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\math\KSVector3.h">
+      <Filter>base\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\math\KSVector4.h">
+      <Filter>base\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\math\KSMatrix4x4.h">
+      <Filter>base\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\container\KSEntity.h">
+      <Filter>core\container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\container\KSScene.h">
+      <Filter>core\container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\components\KSIComponent.h">
+      <Filter>core\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\components\KSComponentMacro.h">
+      <Filter>core\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\KSCore.h">
+      <Filter>core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{5b33c235-d9f3-4458-b078-950972b089d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{3125762c-4f71-4510-b4eb-50598f3f16e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{a5a8c096-47ff-482c-8d69-cd9197274741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{a31f0a91-04d0-49b0-b76f-a5c531ad00e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\math">
+      <UniqueIdentifier>{3cc27975-9d02-4444-b325-f8425c479090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\container">
+      <UniqueIdentifier>{5818035a-e640-4d5a-9cb6-832b34cb347a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\system">
+      <UniqueIdentifier>{585f1b57-1f7b-43b2-8761-af5704a635ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\components">
+      <UniqueIdentifier>{d93c08ae-fa4b-400b-87cc-7cf95e0c85cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\bgfx">
+      <UniqueIdentifier>{de9b95c4-b82b-4cb5-9f16-f411c9196c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\bgfx\include">
+      <UniqueIdentifier>{8733ed97-834b-4138-9f1f-d43c62c0a6b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\bgfx\src">
+      <UniqueIdentifier>{6f4d7846-95ee-49a3-9255-97f42540b07a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\kissshot\external\bgfx\src\bgfx_compute.sh">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\bgfx_shader.sh">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear0.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear1.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear2.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear3.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear4.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear5.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear6.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear7.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\fs_debugfont.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\glcontext_eagl.mm">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\glcontext_nsgl.mm">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\makefile">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\renderer_mtl.mm">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\varying.def.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\vs_clear.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+    <None Include="..\..\kissshot\external\bgfx\src\vs_debugfont.sc">
+      <Filter>external\bgfx\src</Filter>
+    </None>
+  </ItemGroup>
+</Project>

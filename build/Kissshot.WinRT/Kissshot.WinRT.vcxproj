@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6499cb6d-063f-4326-9544-f0a021b3bc71}</ProjectGuid>
+    <Keyword>StaticLibrary</Keyword>
+    <ProjectName>Kissshot.WinRT</ProjectName>
+    <RootNamespace>Kissshot_WinRT</RootNamespace>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <AppContainerApplication>true</AppContainerApplication>
+    <ApplicationType>Windows Store</ApplicationType>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.10240.0</WindowsTargetPlatformMinVersion>
+    <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\kissshot\external\bgfx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\msvc\;$(ProjectDir)..\..\kissshot\;$(ProjectDir)..\..\kissshot\core\;$(ProjectDir)..\..\kissshot\base\;$(ProjectDir)..\..\kissshot\utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996;4006;4265</DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\kissshot\external\bgfx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\msvc\;$(ProjectDir)..\..\kissshot\;$(ProjectDir)..\..\kissshot\core\;$(ProjectDir)..\..\kissshot\base\;$(ProjectDir)..\..\kissshot\utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996;4006;4265</DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\kissshot\external\bgfx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\msvc\;$(ProjectDir)..\..\kissshot\;$(ProjectDir)..\..\kissshot\core\;$(ProjectDir)..\..\kissshot\base\;$(ProjectDir)..\..\kissshot\utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996;4006;4265</DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\kissshot\external\bgfx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\msvc\;$(ProjectDir)..\..\kissshot\;$(ProjectDir)..\..\kissshot\core\;$(ProjectDir)..\..\kissshot\base\;$(ProjectDir)..\..\kissshot\utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996;4006;4265</DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\kissshot\external\bgfx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\msvc\;$(ProjectDir)..\..\kissshot\;$(ProjectDir)..\..\kissshot\core\;$(ProjectDir)..\..\kissshot\base\;$(ProjectDir)..\..\kissshot\utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996;4006;4265</DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\kissshot\external\bgfx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\;$(ProjectDir)..\..\kissshot\external\bx\include\compat\msvc\;$(ProjectDir)..\..\kissshot\;$(ProjectDir)..\..\kissshot\core\;$(ProjectDir)..\..\kissshot\base\;$(ProjectDir)..\..\kissshot\utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996;4006;4265</DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\kissshot\base\KSMath.h" />
+    <ClInclude Include="..\..\kissshot\base\KSTransform.h" />
+    <ClInclude Include="..\..\kissshot\base\math\KSMathMacro.h" />
+    <ClInclude Include="..\..\kissshot\base\math\KSMatrix4x4.h" />
+    <ClInclude Include="..\..\kissshot\base\math\KSVector3.h" />
+    <ClInclude Include="..\..\kissshot\base\math\KSVector4.h" />
+    <ClInclude Include="..\..\kissshot\core\components\KSComponentMacro.h" />
+    <ClInclude Include="..\..\kissshot\core\components\KSIComponent.h" />
+    <ClInclude Include="..\..\kissshot\core\container\KSEntity.h" />
+    <ClInclude Include="..\..\kissshot\core\container\KSScene.h" />
+    <ClInclude Include="..\..\kissshot\core\KSCore.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfx.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfxdefines.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\include\bgfx\bgfxplatform.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\bgfx_p.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\charset.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\config.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear0.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear1.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear2.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear3.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear4.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear5.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear6.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_clear7.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\fs_debugfont.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_eagl.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_egl.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_glx.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_nsgl.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_ppapi.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glcontext_wgl.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\glimports.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\image.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\ovr.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderdoc.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_d3d.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_d3d11.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_d3d12.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_d3d9.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_gl.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\renderer_mtl.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\shader_dx9bc.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\shader_dxbc.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\shader_spirv.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\vertexdecl.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\vs_clear.bin.h" />
+    <ClInclude Include="..\..\kissshot\external\bgfx\src\vs_debugfont.bin.h" />
+    <ClInclude Include="..\..\kissshot\kissshot.h" />
+    <ClInclude Include="..\..\kissshot\KSMacro.h" />
+    <ClInclude Include="..\..\kissshot\util\KSDebug.h" />
+    <ClInclude Include="..\..\kissshot\util\KSStorage.h" />
+    <ClInclude Include="..\..\kissshot\util\KSStringUtil.h" />
+    <ClInclude Include="..\..\kissshot\util\KSUtil.h" />
+    <ClInclude Include="..\..\kissshot\util\KSUtilMacro.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\kissshot\base\KSTransform.cpp" />
+    <ClCompile Include="..\..\kissshot\base\math\KSMatrix4x4.cpp" />
+    <ClCompile Include="..\..\kissshot\base\math\KSVector3.cpp" />
+    <ClCompile Include="..\..\kissshot\base\math\KSVector4.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\bgfx.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_egl.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_glx.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_ppapi.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_wgl.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\image.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\ovr.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderdoc.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_d3d11.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_d3d12.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_d3d9.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_gl.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_null.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\renderer_vk.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_dx9bc.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_dxbc.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_spirv.cpp" />
+    <ClCompile Include="..\..\kissshot\external\bgfx\src\vertexdecl.cpp" />
+    <ClCompile Include="..\..\kissshot\util\KSDebug.cpp" />
+    <ClCompile Include="..\..\kissshot\util\KSStorage-winrt.cpp" />
+    <ClCompile Include="..\..\kissshot\util\KSStringUtil.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\kissshot\external\bgfx\src\bgfx_compute.sh" />
+    <None Include="..\..\kissshot\external\bgfx\src\bgfx_shader.sh" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear0.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear1.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear2.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear3.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear4.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear5.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear6.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_clear7.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\fs_debugfont.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\glcontext_eagl.mm" />
+    <None Include="..\..\kissshot\external\bgfx\src\glcontext_nsgl.mm" />
+    <None Include="..\..\kissshot\external\bgfx\src\makefile" />
+    <None Include="..\..\kissshot\external\bgfx\src\renderer_mtl.mm" />
+    <None Include="..\..\kissshot\external\bgfx\src\varying.def.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\vs_clear.sc" />
+    <None Include="..\..\kissshot\external\bgfx\src\vs_debugfont.sc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

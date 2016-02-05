@@ -6,6 +6,5 @@
 #include "KSDebug.h"
 #include "KSStorage.h"
 #include "KSStringUtil.h"
-#include "KSGlobalLocker.h"
 
 #endif

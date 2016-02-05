@@ -3,8 +3,6 @@
 #include "KSStringUtil.h"
 
 #if KS_PLATFORM_WINRT
-#include <Windows.h>
-#include <ppltasks.h>
 
 KS_UTIL_BEGIN
 static Storage* _instance = nullptr;
@@ -31,7 +29,7 @@ void Storage::addSearchPath(const std::wstring path)
 		ipath.insert(ipath.begin(), L'/');
 	if (end != L'\\' || end != L'/')
 		ipath += L'/';
-	auto& itor = std::find(mPaths.begin(), mPaths.end(), ipath);
+	auto itor = std::find(mPaths.begin(), mPaths.end(), ipath);
 	if (itor != mPaths.end())
 		KSLOG(L"KS Warmming: search path <%s> is exist.", path.c_str());
 	else
@@ -142,12 +140,12 @@ bool Storage::isAbsolutePath(const std::wstring & path)
 bool Storage::createFolderInWritablePath(const std::wstring & path)
 {
 
-	return false;
+	return path == L"";
 }
 
 bool Storage::deleteFileWithPath(const std::wstring & file)
 {
-	return false;
+	return file == L"";
 }
 KS_UTIL_END
 

@@ -5,6 +5,7 @@
 KS_MATH_BEGIN
 
 const Vector3 Vector3::Zero({ 0.0f,0.0f,0.0f });
+const Vector3 Vector3::Identity({ 1.0f,1.0f,1.0f });
 
 Vector3 operator*(const Vector3 & first, const Matrix4x4 & second)
 {

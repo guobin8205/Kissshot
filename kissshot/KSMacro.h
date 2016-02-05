@@ -2,7 +2,7 @@
 
 #ifndef __KISSSHOT__ENGINE__MACRO__
 #define __KISSSHOT__ENGINE__MACRO__
-#include "../external/bx/include/bx/platform.h"
+#include "external/bx/include/bx/platform.h"
 
 #define KS_PLATFORM_ANDROID		BX_PLATFORM_ANDROID
 #define KS_PLATFORM_IOS			BX_PLATFORM_IOS
@@ -32,16 +32,11 @@
 	}
 
 
-#ifdef __cplusplus
 #define KS_BEGIN	namespace kissshot {
 #define KS_END		}
-#else
-#define KS_BEGIN
-#define KS_END
-#endif
 
-#if !defined(KISSSHOT_DEBUG) && (defined(_DEBUG) || defined(DEBUG) || defined(__DEBUG))
-#define KISSSHOT_DEBUG 1
+#if !defined(KS_DEBUG) && (defined(_DEBUG) || defined(DEBUG) || defined(__DEBUG)  || defined(_DEBUG_))
+#define KS_DEBUG 1
 #endif
 
 #if KS_PLATFORM_WINRT || KS_PLATFORM_WINDESKTOP

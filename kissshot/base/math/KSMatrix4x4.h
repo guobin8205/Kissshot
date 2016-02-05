@@ -30,6 +30,7 @@ public:
 	float matrix[16];
 
 	const static Matrix4x4 Zero;
+	const static Matrix4x4 Identity;
 };
 
 inline Matrix4x4 operator + (const Matrix4x4& first, const Matrix4x4& second)
@@ -37,16 +38,16 @@ inline Matrix4x4 operator + (const Matrix4x4& first, const Matrix4x4& second)
 	Matrix4x4 mat;
 	auto &res = mat.matrix;
 	auto &fm = first.matrix, &sm = second.matrix;
-	res[0] = fm[0] + sm[0];
-	res[1] = fm[1] + sm[1];
-	res[2] = fm[2] + sm[2];
-	res[3] = fm[3] + sm[3];
-	res[4] = fm[4] + sm[4];
-	res[5] = fm[5] + sm[5];
-	res[6] = fm[6] + sm[6];
-	res[7] = fm[7] + sm[7];
-	res[8] = fm[8] + sm[8];
-	res[9] = fm[9] + sm[9];
+	res[ 0] = fm[ 0] + sm[ 0];
+	res[ 1] = fm[ 1] + sm[ 1];
+	res[ 2] = fm[ 2] + sm[ 2];
+	res[ 3] = fm[ 3] + sm[ 3];
+	res[ 4] = fm[ 4] + sm[ 4];
+	res[ 5] = fm[ 5] + sm[ 5];
+	res[ 6] = fm[ 6] + sm[ 6];
+	res[ 7] = fm[ 7] + sm[ 7];
+	res[ 8] = fm[ 8] + sm[ 8];
+	res[ 9] = fm[ 9] + sm[ 9];
 	res[10] = fm[10] + sm[10];
 	res[11] = fm[11] + sm[11];
 	res[12] = fm[12] + sm[12];
@@ -68,16 +69,40 @@ inline Matrix4x4 operator * (const Matrix4x4& first, const float& num)
 	Matrix4x4 mat;
 	auto &res = mat.matrix;
 	auto &fm = first.matrix;
-	res[0] = fm[0] * num;
-	res[1] = fm[1] * num;
-	res[2] = fm[2] * num;
-	res[3] = fm[3] * num;
-	res[4] = fm[4] * num;
-	res[5] = fm[5] * num;
-	res[6] = fm[6] * num;
-	res[7] = fm[7] * num;
-	res[8] = fm[8] * num;
-	res[9] = fm[9] * num;
+	res[ 0] = fm[ 0] * num;
+	res[ 1] = fm[ 1] * num;
+	res[ 2] = fm[ 2] * num;
+	res[ 3] = fm[ 3] * num;
+	res[ 4] = fm[ 4] * num;
+	res[ 5] = fm[ 5] * num;
+	res[ 6] = fm[ 6] * num;
+	res[ 7] = fm[ 7] * num;
+	res[ 8] = fm[ 8] * num;
+	res[ 9] = fm[ 9] * num;
+	res[10] = fm[10] * num;
+	res[11] = fm[11] * num;
+	res[12] = fm[12] * num;
+	res[13] = fm[13] * num;
+	res[14] = fm[14] * num;
+	res[15] = fm[15] * num;
+	return mat;
+}
+
+inline Matrix4x4 operator * (const float& num,const Matrix4x4& first)
+{
+	Matrix4x4 mat;
+	auto &res = mat.matrix;
+	auto &fm = first.matrix;
+	res[ 0] = fm[ 0] * num;
+	res[ 1] = fm[ 1] * num;
+	res[ 2] = fm[ 2] * num;
+	res[ 3] = fm[ 3] * num;
+	res[ 4] = fm[ 4] * num;
+	res[ 5] = fm[ 5] * num;
+	res[ 6] = fm[ 6] * num;
+	res[ 7] = fm[ 7] * num;
+	res[ 8] = fm[ 8] * num;
+	res[ 9] = fm[ 9] * num;
 	res[10] = fm[10] * num;
 	res[11] = fm[11] * num;
 	res[12] = fm[12] * num;
@@ -102,16 +127,16 @@ inline Matrix4x4& operator += (Matrix4x4& first, const Matrix4x4& second)
 {
 	auto &fm = first.matrix;
 	auto &sm = second.matrix;
-	fm[0] = fm[0] + sm[0];
-	fm[1] = fm[1] + sm[1];
-	fm[2] = fm[2] + sm[2];
-	fm[3] = fm[3] + sm[3];
-	fm[4] = fm[4] + sm[4];
-	fm[5] = fm[5] + sm[5];
-	fm[6] = fm[6] + sm[6];
-	fm[7] = fm[7] + sm[7];
-	fm[8] = fm[8] + sm[8];
-	fm[9] = fm[9] + sm[9];
+	fm[ 0] = fm[ 0] + sm[ 0];
+	fm[ 1] = fm[ 1] + sm[ 1];
+	fm[ 2] = fm[ 2] + sm[ 2];
+	fm[ 3] = fm[ 3] + sm[ 3];
+	fm[ 4] = fm[ 4] + sm[ 4];
+	fm[ 5] = fm[ 5] + sm[ 5];
+	fm[ 6] = fm[ 6] + sm[ 6];
+	fm[ 7] = fm[ 7] + sm[ 7];
+	fm[ 8] = fm[ 8] + sm[ 8];
+	fm[ 9] = fm[ 9] + sm[ 9];
 	fm[10] = fm[10] + sm[10];
 	fm[11] = fm[11] + sm[11];
 	fm[12] = fm[12] + sm[12];
@@ -130,16 +155,16 @@ inline Matrix4x4 operator *= (Matrix4x4& first, const Matrix4x4& second)
 inline Matrix4x4 operator *= (Matrix4x4& first, const float& num)
 {
 	auto &fm = first.matrix;
-	fm[0] = fm[0] * num;
-	fm[1] = fm[1] * num;
-	fm[2] = fm[2] * num;
-	fm[3] = fm[3] * num;
-	fm[4] = fm[4] * num;
-	fm[5] = fm[5] * num;
-	fm[6] = fm[6] * num;
-	fm[7] = fm[7] * num;
-	fm[8] = fm[8] * num;
-	fm[9] = fm[9] * num;
+	fm[ 0] = fm[ 0] * num;
+	fm[ 1] = fm[ 1] * num;
+	fm[ 2] = fm[ 2] * num;
+	fm[ 3] = fm[ 3] * num;
+	fm[ 4] = fm[ 4] * num;
+	fm[ 5] = fm[ 5] * num;
+	fm[ 6] = fm[ 6] * num;
+	fm[ 7] = fm[ 7] * num;
+	fm[ 8] = fm[ 8] * num;
+	fm[ 9] = fm[ 9] * num;
 	fm[10] = fm[10] * num;
 	fm[11] = fm[11] * num;
 	fm[12] = fm[12] * num;
@@ -157,7 +182,8 @@ inline Matrix4x4 operator /= (Matrix4x4& first, const Matrix4x4& second)
 inline Matrix4x4& operator /= (Matrix4x4& first, const float& num)
 {
 	float temp = 1 / num;
-	return first *= temp;
+	first *= temp;
+	return first;
 }
 
 inline Matrix4x4 MtxTransform(float xx, float yy, float zz)

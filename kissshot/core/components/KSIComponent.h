@@ -6,6 +6,7 @@
 
 namespace kissshot { namespace core { namespace container { class Entity; } } };
 
+
 KS_COMPONENT_BEGIN
 
 class KS_DLL IComponent

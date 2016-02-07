@@ -56,29 +56,32 @@
     <ClCompile Include="..\..\kissshot\external\bgfx\src\vertexdecl.cpp">
       <Filter>external\bgfx\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\kissshot\util\KSDebug.cpp">
-      <Filter>utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\kissshot\util\KSStorage-winrt.cpp">
-      <Filter>utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\kissshot\util\KSStringUtil.cpp">
-      <Filter>utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\kissshot\base\KSTransform.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\kissshot\base\math\KSMatrix4x4.cpp">
-      <Filter>base\math</Filter>
+      <Filter>base\src\math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\kissshot\base\math\KSVector3.cpp">
-      <Filter>base\math</Filter>
+      <Filter>base\src\math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\kissshot\base\math\KSVector4.cpp">
-      <Filter>base\math</Filter>
+      <Filter>base\src\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\util\KSDebug.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\util\KSStorage-winrt.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\util\KSStringUtil.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\core\container\KSEntity.cpp">
+      <Filter>core\container\src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\kissshot\core\components\KSCamera.cpp">
-      <Filter>core\components</Filter>
+      <Filter>core\components\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\base\KSTransform.cpp">
+      <Filter>base\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -198,15 +201,6 @@
     <ClInclude Include="..\..\kissshot\external\bgfx\src\vs_debugfont.bin.h">
       <Filter>external\bgfx\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\kissshot\util\KSDebug.h">
-      <Filter>utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\util\KSStorage.h">
-      <Filter>utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\util\KSStringUtil.h">
-      <Filter>utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\kissshot\util\KSUtil.h">
       <Filter>utils</Filter>
     </ClInclude>
@@ -215,35 +209,17 @@
     </ClInclude>
     <ClInclude Include="..\..\kissshot\kissshot.h" />
     <ClInclude Include="..\..\kissshot\KSMacro.h" />
-    <ClInclude Include="..\..\kissshot\base\KSMath.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\base\KSTransform.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\kissshot\base\math\KSMathMacro.h">
-      <Filter>base\math</Filter>
+      <Filter>base\src\math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\kissshot\base\math\KSVector3.h">
-      <Filter>base\math</Filter>
+      <Filter>base\src\math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\kissshot\base\math\KSVector4.h">
-      <Filter>base\math</Filter>
+      <Filter>base\src\math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\kissshot\base\math\KSMatrix4x4.h">
-      <Filter>base\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\core\container\KSEntity.h">
-      <Filter>core\container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\core\container\KSScene.h">
-      <Filter>core\container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\core\components\KSIComponent.h">
-      <Filter>core\components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\core\components\KSComponentMacro.h">
-      <Filter>core\components</Filter>
+      <Filter>base\src\math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\kissshot\core\KSCore.h">
       <Filter>core</Filter>
@@ -257,17 +233,47 @@
     <ClInclude Include="..\..\kissshot\base\KSBaseMacro.h">
       <Filter>base</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\kissshot\util\KSDebug.h">
+      <Filter>utils\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\util\KSStorage.h">
+      <Filter>utils\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\util\KSStringUtil.h">
+      <Filter>utils\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\container\KSEntity.h">
+      <Filter>core\container\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\container\KSScene.h">
+      <Filter>core\container\src</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\kissshot\core\container\KSContainer.h">
-      <Filter>core\container</Filter>
+      <Filter>core\container\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\kissshot\core\container\KSContainerMacro.h">
-      <Filter>core\container</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\core\components\KSCamera.h">
-      <Filter>core\components</Filter>
+      <Filter>core\container\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\kissshot\core\components\KSComponents.h">
-      <Filter>core\components</Filter>
+      <Filter>core\components\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\components\KSComponentMacro.h">
+      <Filter>core\components\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\components\KSCamera.h">
+      <Filter>core\components\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\core\components\KSIComponent.h">
+      <Filter>core\components\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\KSMath.h">
+      <Filter>base\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\KSTransform.h">
+      <Filter>base\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\base\math\KSVector2.h">
+      <Filter>base\src\math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -282,9 +288,6 @@
     </Filter>
     <Filter Include="base">
       <UniqueIdentifier>{a31f0a91-04d0-49b0-b76f-a5c531ad00e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="base\math">
-      <UniqueIdentifier>{3cc27975-9d02-4444-b325-f8425c479090}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\container">
       <UniqueIdentifier>{5818035a-e640-4d5a-9cb6-832b34cb347a}</UniqueIdentifier>
@@ -303,6 +306,27 @@
     </Filter>
     <Filter Include="external\bgfx\src">
       <UniqueIdentifier>{6f4d7846-95ee-49a3-9255-97f42540b07a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils\src">
+      <UniqueIdentifier>{0bde9b3f-80c5-4f73-92ec-0e6f1179d9df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\container\src">
+      <UniqueIdentifier>{96a3e46b-f31a-4bf5-8958-4e84c8feffe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\container\include">
+      <UniqueIdentifier>{fb35bce2-35f8-4e60-b4b4-d70840f5f1ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\components\include">
+      <UniqueIdentifier>{e2cbc80c-cb3e-472d-a711-655b5d3fe9a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\components\src">
+      <UniqueIdentifier>{66c2a525-8bf2-4f58-bdd8-fcebf7f3656b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\src">
+      <UniqueIdentifier>{adf50a13-e816-4848-9cdf-b85b94bde172}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\src\math">
+      <UniqueIdentifier>{3cc27975-9d02-4444-b325-f8425c479090}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -22,21 +22,12 @@ using namespace Windows::UI::Xaml::Navigation;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
+KS_USE_COMPONENT;
 
 MainPage::MainPage()
 {
 	InitializeComponent();
-	kissshot::core::container::Entity e;
-	e.addComponent<kissshot::core::component::IComponent>()->setTag(111);
+	kissshot::base::math::Matrix4x4 ma1,ma2;
+	ma1 *= ma2;
 
-	auto& owner = e.getComponent<kissshot::core::component::IComponent>()->getOwner();
-	int a = 10;
-
-	owner.addComponent<kissshot::core::component::IComponent>()->setTag(222);
-
-	int b = 20;
-
-	owner.removeComponent<kissshot::core::component::IComponent>(222);
-
-	int c = 30;
 }

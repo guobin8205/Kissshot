@@ -225,6 +225,7 @@
     <ClInclude Include="..\..\kissshot\base\KSTransform.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSMathMacro.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSMatrix4x4.h" />
+    <ClInclude Include="..\..\kissshot\base\math\KSVector2.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSVector3.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSVector4.h" />
     <ClInclude Include="..\..\kissshot\core\components\KSCamera.h" />
@@ -291,6 +292,7 @@
     <ClCompile Include="..\..\kissshot\base\math\KSVector3.cpp" />
     <ClCompile Include="..\..\kissshot\base\math\KSVector4.cpp" />
     <ClCompile Include="..\..\kissshot\core\components\KSCamera.cpp" />
+    <ClCompile Include="..\..\kissshot\core\container\KSEntity.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\bgfx.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_egl.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_glx.cpp" />

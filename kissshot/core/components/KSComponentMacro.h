@@ -11,8 +11,12 @@
 #define KS_COMPONENT KS_CORE::component
 #define KS_USE_COMPONENT using namespace KS_COMPONENT
 
-#define KSComponentCtor(CLASS) \
+#define KSComponentCtor(CLASS,...) \
 CLASS(void) = delete; \
-CLASS(::kissshot::core::container::Entity& owner)
+CLASS(const CLASS&) = delete; \
+CLASS(::kissshot::core::container::Entity& owner,__VA_ARGS__)
+
+#define KSComponentCtorDef(CLASS,...) \
+CLASS::CLASS(::kissshot::core::container::Entity& owner,__VA_ARGS__)
 
 #endif

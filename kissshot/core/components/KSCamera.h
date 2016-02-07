@@ -9,13 +9,15 @@ KS_COMPONENT_BEGIN
 class Camera : public IComponent
 {
 public:
-	KSComponentCtor(Camera)
-		: IComponent(owner)
-		, mLookAt(0.0f, 0.0f, 0.0f)
-		, mUp(0.0f, 1.0f, 0.0f)
+	enum class CameraType
 	{
-	}
-	~Camera(void) {};
+		Orthogonal,
+		Perspective
+	};
+
+public:
+	KSComponentCtor(Camera, const CameraType& type = CameraType::Orthogonal);
+	~Camera(void) = default;
 
 	inline Camera& setLookAt(float x, float y, float z) { mLookAt.set(x, y, z); return *this; }
 	inline Camera& setLookAt(const KS_MATH::Vector3& vec) { mLookAt = vec; return *this; }
@@ -26,9 +28,16 @@ public:
 
 	inline KS_MATH::Vector3& getLookAt(void) { return mLookAt; }
 	inline KS_MATH::Vector3& getEyeUp(void) { return mUp; }
+
+	inline const CameraType& getType(void) const { return mType; }
+	inline Camera& setType(const CameraType& type) { mType = type; return *this; }
+
+
 protected:
 	KS_MATH::Vector3 mLookAt;
 	KS_MATH::Vector3 mUp;
+
+	CameraType mType;
 };
 
 KS_COMPONENT_END

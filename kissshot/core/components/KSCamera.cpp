@@ -7,18 +7,18 @@
 KS_USE_MATH;
 KS_USE_COMPONENT;
 
-KSComponentCtorDef(Camera, const CameraType& type)
-	: IComponent(owner)
+KSComponentCtorDef(Camera)
+	: IComponent()
 	, mLookAt(0.0f, 0.0f, 0.0f)
 	, mUp(0.0f, 1.0f, 0.0f)
-	, mType(type)
+	, mType(CameraType::Orthogonal)
 {
 }
 
 KS_MATH::Matrix4x4 Camera::getViewMatrix(void)
 {
-	auto& owner = getOwner();
-	auto& trans = owner.transform();
+	auto owner = getOwner();
+	auto& trans = owner->transform();
 
 	switch (mType)
 	{

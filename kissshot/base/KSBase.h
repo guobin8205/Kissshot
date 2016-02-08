@@ -5,5 +5,6 @@
 
 #include "KSTransform.h"
 #include "KSMath.h"
+#include "KSSize.h"
 
 #endif

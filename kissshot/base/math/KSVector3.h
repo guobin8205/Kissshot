@@ -14,74 +14,39 @@ class Vector4;
 class KS_DLL Vector3 final
 {
 public:
-	Vector3(void) : x(vector[0]), y(vector[1]), z(vector[2]) { std::memset(vector, 0, sizeof(float) * 3); }
-	Vector3(const float(&ff)[3]) : Vector3() { bx::vec3Move(vector, ff); }
-	Vector3(float xx, float yy, float zz) : Vector3() { x = xx, y = yy, z = zz; }
-	Vector3(const Vector3& other) : Vector3() { *this = other; }
-	///this function will change this;
-	///return *this
-	inline Vector3& normalizing(void)
-	{
-		bx::vec3Norm(vector, vector);
-		return *this;
-	}
+	Vector3(void);
+	Vector3(const float(&ff)[3]);
+	Vector3(float xx, float yy, float zz);
+	Vector3(const Vector3& other);
 
 	///this function will change this;
 	///return *this
-	inline Vector3& invert(void)
-	{
-		bx::vec3Neg(vector, vector);
-		return *this;
-	}
+	inline Vector3& normalizing(void);
 
 	///this function will change this;
 	///return *this
-	inline Vector3& absoulte(void)
-	{
-		bx::vec3Abs(vector, vector);
-		return *this;
-	}
+	inline Vector3& invert(void);
 
-	inline Vector3 getNormalizing(void)
-	{
-		Vector3 res = *this;
-		return res.normalizing();
-	}
+	///this function will change this;
+	///return *this
+	inline Vector3& absoulte(void);
 
-	inline Vector3 getInvert(void)
-	{
-		Vector3 res = *this;
-		return res.invert();
-	}
+	inline Vector3 getNormalizing(void);
 
-	inline Vector3 getAbsoulte(void) const
-	{
-		Vector3 res = *this;
-		return res.absoulte();
-	}
+	inline Vector3 getInvert(void);
 
-	inline Vector3& scale(float xx, float yy = 1.0f, float zz = 1.0f)
-	{
-		x *= xx; y *= yy; z *= zz;
-		return *this;
-	}
+	inline Vector3 getAbsoulte(void) const;
 
-	inline Vector3& scale(const Vector3& s)
-	{
-		x *= s.x; y *= s.y; z *= s.z;
-		return *this;
-	}
+	inline Vector3& scale(float xx, float yy = 1.0f, float zz = 1.0f);
 
-	inline Vector3& set(float xx, float yy, float zz) { x = xx; y = yy; z = zz; return *this; }
+	inline Vector3& scale(const Vector3& s);
 
-	inline float length(void) { return bx::vec3Length(vector); }
-	inline float dot(const Vector3& v2) { return bx::vec3Dot(vector, v2.vector); }
+	inline Vector3& set(float xx, float yy, float zz);
+
+	inline float length(void);
+	inline float dot(const Vector3& v2);
 	
-	inline Vector3& operator= (const Vector3& other)
-	{
-		x = other.x, y = other.y, z = other.z;
-		return *this; 
-	}
+	inline Vector3& operator= (const Vector3& other);
 
 public:
 	float &x, &y, &z;
@@ -91,138 +56,47 @@ public:
 	const static Vector3 Identity;
 };
 
-#define OPERATOR_PARAMETER  const Vector3& first, const Vector3& second
-#define OPERATOR_PARAMETER_NUM const Vector3& first, const float num
-#define OPERATOR_PARAMETER_UNCONST Vector3& first, const Vector3& second
-#define OPERATOR_PARAMETER_NUM_UNCONST Vector3& first, const float num
-#define KS_MATH_GET_DEV float xx = first.x - second.x, yy = first.y - second.y, zz = first.z - second.z
+extern inline KS_DLL bool operator == (const Vector3& first, const Vector3& second);
 
-inline bool operator == (OPERATOR_PARAMETER)
-{
-	KS_MATH_GET_DEV;
-	return bx::fabsolute(xx) <= KS_MATH_COMPARE_DEV
-		&& bx::fabsolute(yy) <= KS_MATH_COMPARE_DEV
-		&& bx::fabsolute(zz) <= KS_MATH_COMPARE_DEV;
-}
+extern inline KS_DLL bool operator < (const Vector3& first, const Vector3& second);
 
-inline bool operator < (OPERATOR_PARAMETER)
-{
-	KS_MATH_GET_DEV;
-	return (xx < -KS_MATH_COMPARE_DEV)
-		|| (xx <= KS_MATH_COMPARE_DEV && xx >= -KS_MATH_COMPARE_DEV && yy < -KS_MATH_COMPARE_DEV)
-		|| (xx <= KS_MATH_COMPARE_DEV && xx >= -KS_MATH_COMPARE_DEV && yy <= KS_MATH_COMPARE_DEV && yy >= -KS_MATH_COMPARE_DEV && zz < KS_MATH_COMPARE_DEV);
-}
+extern inline KS_DLL bool operator > (const Vector3& first, const Vector3& second);
 
-inline bool operator > (OPERATOR_PARAMETER)
-{
-	KS_MATH_GET_DEV;
-	return (xx > KS_MATH_COMPARE_DEV)
-		|| (xx <= KS_MATH_COMPARE_DEV && xx >= -KS_MATH_COMPARE_DEV && yy > KS_MATH_COMPARE_DEV)
-		|| (xx <= KS_MATH_COMPARE_DEV && xx >= -KS_MATH_COMPARE_DEV && yy <= KS_MATH_COMPARE_DEV && yy >= -KS_MATH_COMPARE_DEV && zz > KS_MATH_COMPARE_DEV);
-}
+extern inline KS_DLL bool operator <= (const Vector3& first, const Vector3& second);
 
-inline bool operator <= (OPERATOR_PARAMETER)
-{
-	return (first < second) || (first == second);
-}
+extern inline KS_DLL bool operator >= (const Vector3& first, const Vector3& second);
 
-inline bool operator >= (OPERATOR_PARAMETER)
-{
-	return (first > second) || (first == second);
-}
+extern inline KS_DLL Vector3 operator + (const Vector3& first, const Vector3& second);
 
-inline Vector3 operator + (OPERATOR_PARAMETER)
-{
-	Vector3 vec;
-	bx::vec3Add(vec.vector, first.vector, second.vector);
-	return vec;
-}
+extern inline KS_DLL Vector3 operator + (const Vector3& first, const float num);
 
-inline Vector3 operator + (OPERATOR_PARAMETER_NUM)
-{
-	Vector3 vec;
-	bx::vec3Add(vec.vector, first.vector, num);
-	return vec;
-}
+extern inline KS_DLL Vector3 operator - (const Vector3& first, const Vector3& second);
 
-inline Vector3 operator - (OPERATOR_PARAMETER)
-{
-	Vector3 vec;
-	bx::vec3Sub(vec.vector, first.vector, second.vector);
-	return vec;
-}
-
-inline Vector3 operator - (OPERATOR_PARAMETER_NUM)
-{
-	Vector3 vec;
-	bx::vec3Sub(vec.vector, first.vector, num);
-	return vec;
-}
+extern inline KS_DLL Vector3 operator - (const Vector3& first, const float num);
 
 //cross mul
-inline Vector3 operator * (const Vector3& first, const Vector3& second)
-{
-	Vector3 vec;
-	bx::vec3Cross(vec.vector, first.vector, second.vector);
-	return vec;
-}
+extern inline KS_DLL Vector3 operator * (const Vector3& first, const Vector3& second);
 
-inline Vector3 operator * (OPERATOR_PARAMETER_NUM)
-{
-	Vector3 vec;
-	bx::vec3Mul(vec.vector, first.vector, num);
-	return vec;
-}
+extern inline KS_DLL Vector3 operator * (const Vector3& first, const float num);
 
-inline Vector3& operator += (OPERATOR_PARAMETER_UNCONST)
-{
-	bx::vec3Add(first.vector, first.vector, second.vector);
-	return first;
-}
+extern inline KS_DLL Vector3& operator += (Vector3& first, const Vector3& second);
 
-inline Vector3& operator += (OPERATOR_PARAMETER_NUM_UNCONST)
-{
-	bx::vec3Add(first.vector, first.vector, num);
-	return first;
-}
+extern inline KS_DLL Vector3& operator += (Vector3& first, const float num);
 
-inline Vector3& operator -= (OPERATOR_PARAMETER_UNCONST)
-{
-	bx::vec3Sub(first.vector, first.vector, second.vector);
-	return first;
-}
+extern inline KS_DLL Vector3& operator -= (Vector3& first, const Vector3& second);
 
-inline Vector3& operator -= (OPERATOR_PARAMETER_NUM_UNCONST)
-{
-	bx::vec3Sub(first.vector, first.vector, num);
-	return first;
-}
+extern inline KS_DLL Vector3& operator -= (Vector3& first, const float num);
 
 //cross mul
-inline Vector3& operator *= (Vector3& first, const Vector3& second)
-{
-	bx::vec3Cross(first.vector, first.vector, second.vector);
-	return first;
-}
+extern inline KS_DLL Vector3& operator *= (Vector3& first, const Vector3& second);
 
-inline Vector3& operator *= (OPERATOR_PARAMETER_NUM_UNCONST)
-{
-	bx::vec3Mul(first.vector, first.vector, num);
-	return first;
-}
+extern inline KS_DLL Vector3& operator *= (Vector3& first, const float num);
 
+extern inline KS_DLL Vector3 operator * (const Vector3& first, const Matrix4x4& second);
+extern inline KS_DLL Vector3 operator * (const Vector3& first, const Vector4& second);
 
-KS_DLL Vector3 operator * (const Vector3& first, const Matrix4x4& second);
-KS_DLL Vector3 operator * (const Vector3& first, const Vector4& second);
-
-KS_DLL Vector3& operator *= (Vector3& first, const Matrix4x4& second);
-KS_DLL Vector3& operator *= (Vector3& first, const Vector4& second);
-
-#undef OPERATOR_PARAMETER
-#undef OPERATOR_PARAMETER_NUM
-#undef OPERATOR_PARAMETER_UNCONST
-#undef OPERATOR_PARAMETER_NUM_UNCONST
-#undef KS_MATH_GET_DEV
+extern inline KS_DLL Vector3& operator *= (Vector3& first, const Matrix4x4& second);
+extern inline KS_DLL Vector3& operator *= (Vector3& first, const Vector4& second);
 
 KS_MATH_END
 

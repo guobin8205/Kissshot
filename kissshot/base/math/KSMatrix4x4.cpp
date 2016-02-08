@@ -11,6 +11,41 @@ const Matrix4x4 Matrix4x4::Zero({
 });
 const Matrix4x4 Matrix4x4::Identity;
 
+Matrix4x4::Matrix4x4(void)
+{
+	bx::mtxIdentity(matrix);
+}
+
+Matrix4x4::Matrix4x4(const float(&ff)[16])
+{
+	bx::mtxTranspose(matrix, ff);
+}
+
+Matrix4x4::Matrix4x4(const Matrix4x4 & other)
+	: Matrix4x4()
+{
+	*this = other;
+}
+
+Matrix4x4& Matrix4x4::inverse(void)
+{
+	bx::mtxInverse(matrix, matrix);
+	return *this;
+}
+
+Matrix4x4 Matrix4x4::getInverse(void) const
+{
+	Matrix4x4 res(matrix);
+	res.inverse();
+	return res;
+}
+
+inline Matrix4x4 & Matrix4x4::operator=(const Matrix4x4 & other)
+{
+	bx::mtxTranspose(matrix, other.matrix);
+	return *this;
+}
+
 inline Matrix4x4 operator + (const Matrix4x4& first, const Matrix4x4& second)
 {
 	Matrix4x4 mat;

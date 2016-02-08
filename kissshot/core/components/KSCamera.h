@@ -16,7 +16,7 @@ public:
 	};
 
 public:
-	KSComponentCtor(Camera, const CameraType& type = CameraType::Orthogonal);
+	KSComponentCtor(Camera);
 	~Camera(void) = default;
 
 	inline Camera& setLookAt(float x, float y, float z) { mLookAt.set(x, y, z); return *this; }
@@ -31,7 +31,6 @@ public:
 
 	inline const CameraType& getType(void) const { return mType; }
 	inline Camera& setType(const CameraType& type) { mType = type; return *this; }
-
 
 protected:
 	KS_MATH::Vector3 mLookAt;

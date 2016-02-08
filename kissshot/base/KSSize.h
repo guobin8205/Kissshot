@@ -6,18 +6,34 @@
 
 KS_BASE_BEGIN
 
-class KS_DLL Size
+namespace math { class Vector3; }
+
+class KS_DLL Size final
 {
 public:
-	Size(float32 w = 0.0f, float32 h = 0.0f)
-		: width(w)
-		, height(h)
-	{
-	}
+	Size(float w = 0.0f, float h = 0.0f);
 
+	inline Size& scale(float w, float h);
+	inline Size& increase(float w, float h);
+	inline Size& set(float w, float h);
+
+	inline float length(void) const;
+
+	inline operator math::Vector3(void);
 public:
-	float32 width, height;
+	float width, height;
 };
+
+extern inline KS_DLL Size operator+ (const Size& size, const float& num);
+extern inline KS_DLL Size operator+ (const float& num, const Size& size);
+extern inline KS_DLL Size operator- (const Size& size, const float& num);
+extern inline KS_DLL Size operator* (const Size& size, const float& scale);
+extern inline KS_DLL Size operator* (const float& scale, const Size& size);
+extern inline KS_DLL Size operator/ (const Size& size, const float& scale);
+extern inline KS_DLL Size& operator+= (Size& size, const float& num);
+extern inline KS_DLL Size& operator-= (Size& size, const float& num);
+extern inline KS_DLL Size& operator*= (Size& size, const float& scale);
+extern inline KS_DLL Size& operator/= (Size& size, const float& scale);
 
 KS_BASE_END
 

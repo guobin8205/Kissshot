@@ -65,15 +65,6 @@
     <ClCompile Include="..\..\kissshot\base\math\KSVector4.cpp">
       <Filter>base\src\math</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\kissshot\util\KSDebug.cpp">
-      <Filter>utils\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\kissshot\util\KSStorage-winrt.cpp">
-      <Filter>utils\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\kissshot\util\KSStringUtil.cpp">
-      <Filter>utils\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\kissshot\core\container\KSEntity.cpp">
       <Filter>core\container\src</Filter>
     </ClCompile>
@@ -82,6 +73,21 @@
     </ClCompile>
     <ClCompile Include="..\..\kissshot\base\KSTransform.cpp">
       <Filter>base\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\base\KSSize.cpp">
+      <Filter>base\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\core\components\KSIComponent.cpp">
+      <Filter>core\components\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\utils\KSStringUtil.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\utils\KSStorage-winrt.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kissshot\utils\KSDebug.cpp">
+      <Filter>utils\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -201,12 +207,6 @@
     <ClInclude Include="..\..\kissshot\external\bgfx\src\vs_debugfont.bin.h">
       <Filter>external\bgfx\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\kissshot\util\KSUtil.h">
-      <Filter>utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\util\KSUtilMacro.h">
-      <Filter>utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\kissshot\kissshot.h" />
     <ClInclude Include="..\..\kissshot\KSMacro.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSMathMacro.h">
@@ -232,15 +232,6 @@
     </ClInclude>
     <ClInclude Include="..\..\kissshot\base\KSBaseMacro.h">
       <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\util\KSDebug.h">
-      <Filter>utils\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\util\KSStorage.h">
-      <Filter>utils\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\kissshot\util\KSStringUtil.h">
-      <Filter>utils\src</Filter>
     </ClInclude>
     <ClInclude Include="..\..\kissshot\core\container\KSEntity.h">
       <Filter>core\container\src</Filter>
@@ -272,8 +263,23 @@
     <ClInclude Include="..\..\kissshot\base\KSTransform.h">
       <Filter>base\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\kissshot\base\math\KSVector2.h">
-      <Filter>base\src\math</Filter>
+    <ClInclude Include="..\..\kissshot\base\KSSize.h">
+      <Filter>base\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\utils\KSUtilMacro.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\utils\KSUtil.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\utils\KSStringUtil.h">
+      <Filter>utils\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\utils\KSStorage.h">
+      <Filter>utils\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\utils\KSDebug.h">
+      <Filter>utils\src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -12,20 +12,27 @@ KS_COMPONENT_BEGIN
 class KS_DLL IComponent
 {
 public:
-	KSComponentCtor(IComponent)
+	IComponent(void)
 		: mTag(0)
-		, mOwner(owner)
+		, mOwner(nullptr)
 	{}
 
-	virtual ~IComponent() {};
+	virtual ~IComponent();
 
 	virtual inline const int getTag() const { return mTag; }
 	virtual inline void setTag(int tag) { mTag = tag; }
-	kissshot::core::container::Entity& getOwner() { return mOwner; }
 
+	KS_CORE::container::Entity* const getOwner() { return mOwner; }
+	virtual void setOwner(KS_CORE::container::Entity* other);
+
+	virtual inline void setEnable(bool enable) { mIsEnable = enable; }
+	virtual inline const bool& isEnable(void) const { return mIsEnable; }
+
+	friend class KS_CORE::container::Entity;
 protected:
 	int mTag;
-	kissshot::core::container::Entity& mOwner;
+	KS_CORE::container::Entity* mOwner;
+	bool mIsEnable;
 };
 
 KS_COMPONENT_END

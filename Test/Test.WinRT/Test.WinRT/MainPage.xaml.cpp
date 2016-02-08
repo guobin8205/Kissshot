@@ -27,7 +27,17 @@ KS_USE_COMPONENT;
 MainPage::MainPage()
 {
 	InitializeComponent();
-	kissshot::base::math::Matrix4x4 ma1,ma2;
-	ma1 *= ma2;
+	std::shared_ptr<kissshot::core::container::Entity> e1(new kissshot::core::container::Entity);
+	auto i1 = std::shared_ptr<kissshot::core::component::IComponent>(new kissshot::core::component::IComponent());
+	auto i2 = std::shared_ptr<kissshot::core::component::IComponent>(new kissshot::core::component::Camera());
+	i1->setTag(200);
 
+	{
+		e1->addComponent<kissshot::core::component::IComponent>()->setTag(300);
+		e1->addComponent(i1);
+		e1->addComponent(i2);
+	}
+	e1 = nullptr;
+
+	int a = 20;
 }

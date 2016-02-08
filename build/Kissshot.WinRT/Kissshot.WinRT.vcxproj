@@ -222,10 +222,10 @@
     <ClInclude Include="..\..\kissshot\base\KSBase.h" />
     <ClInclude Include="..\..\kissshot\base\KSBaseMacro.h" />
     <ClInclude Include="..\..\kissshot\base\KSMath.h" />
+    <ClInclude Include="..\..\kissshot\base\KSSize.h" />
     <ClInclude Include="..\..\kissshot\base\KSTransform.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSMathMacro.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSMatrix4x4.h" />
-    <ClInclude Include="..\..\kissshot\base\math\KSVector2.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSVector3.h" />
     <ClInclude Include="..\..\kissshot\base\math\KSVector4.h" />
     <ClInclude Include="..\..\kissshot\core\components\KSCamera.h" />
@@ -278,20 +278,22 @@
     <ClInclude Include="..\..\kissshot\external\bgfx\src\vs_debugfont.bin.h" />
     <ClInclude Include="..\..\kissshot\kissshot.h" />
     <ClInclude Include="..\..\kissshot\KSMacro.h" />
-    <ClInclude Include="..\..\kissshot\util\KSDebug.h" />
-    <ClInclude Include="..\..\kissshot\util\KSStorage.h" />
-    <ClInclude Include="..\..\kissshot\util\KSStringUtil.h" />
-    <ClInclude Include="..\..\kissshot\util\KSUtil.h" />
-    <ClInclude Include="..\..\kissshot\util\KSUtilMacro.h" />
+    <ClInclude Include="..\..\kissshot\utils\KSDebug.h" />
+    <ClInclude Include="..\..\kissshot\utils\KSStorage.h" />
+    <ClInclude Include="..\..\kissshot\utils\KSStringUtil.h" />
+    <ClInclude Include="..\..\kissshot\utils\KSUtil.h" />
+    <ClInclude Include="..\..\kissshot\utils\KSUtilMacro.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\kissshot\base\KSSize.cpp" />
     <ClCompile Include="..\..\kissshot\base\KSTransform.cpp" />
     <ClCompile Include="..\..\kissshot\base\math\KSMatrix4x4.cpp" />
     <ClCompile Include="..\..\kissshot\base\math\KSVector3.cpp" />
     <ClCompile Include="..\..\kissshot\base\math\KSVector4.cpp" />
     <ClCompile Include="..\..\kissshot\core\components\KSCamera.cpp" />
+    <ClCompile Include="..\..\kissshot\core\components\KSIComponent.cpp" />
     <ClCompile Include="..\..\kissshot\core\container\KSEntity.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\bgfx.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\glcontext_egl.cpp" />
@@ -311,9 +313,9 @@
     <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_dxbc.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_spirv.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\vertexdecl.cpp" />
-    <ClCompile Include="..\..\kissshot\util\KSDebug.cpp" />
-    <ClCompile Include="..\..\kissshot\util\KSStorage-winrt.cpp" />
-    <ClCompile Include="..\..\kissshot\util\KSStringUtil.cpp" />
+    <ClCompile Include="..\..\kissshot\utils\KSDebug.cpp" />
+    <ClCompile Include="..\..\kissshot\utils\KSStorage-winrt.cpp" />
+    <ClCompile Include="..\..\kissshot\utils\KSStringUtil.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

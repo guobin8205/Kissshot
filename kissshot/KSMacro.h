@@ -31,6 +31,10 @@
 		__ptr__ = nullptr; \
 	}
 
+#define KS_REF_TYPE(CLASS) typedef std::shared_ptr<CLASS> ##CLASS##Ref
+
+#define CLASS_HASH(EXP) typeid(EXP).hash_code()
+#define CLASS_PTR_HASH(EXP) typeid(*EXP).hash_code()
 
 #define KS_BEGIN	namespace kissshot {
 #define KS_END		}

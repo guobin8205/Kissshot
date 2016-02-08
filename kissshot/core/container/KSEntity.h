@@ -12,7 +12,6 @@
 KS_CORE_BEGIN namespace component { class IComponent; } KS_CORE_END;
 KS_CORE_CONTAINER_BEGIN
 
-
 class KS_DLL Entity final
 {
 public:
@@ -38,24 +37,32 @@ public:
 	template<typename T>
 	void removeComponent(int tag);
 
-	std::shared_ptr<KS_CORE::component::IComponent> removeComponent(KS_CORE::component::IComponent* com);
+	void removeComponents(uint32 hashcode);
+	std::shared_ptr<KS_CORE::component::IComponent> removeComponent(uint32 hashcode, int uid);
 
 	inline KS_BASE::Transform& transform() { return mTransform; }
 	inline KS_MATH::Matrix4x4 getMatrix() { return mTransform.getMatrix(); }
+
+private:
+	void _refreshUid(void);
+	void _checkUid(void);
+
 private:
 	KS_BASE::Transform mTransform;
 	ComponentMap mComponents;
-	
+	uint32 mUidCount;
 };
 
 template<typename T>
 std::shared_ptr<T> Entity::addComponent(void)
 {
 	static_assert(::std::is_base_of<KS_CORE::component::IComponent, T>::value, "T must base of compnent::IComponent");
+	_checkUid();
 
 	std::shared_ptr<T> ptr(new T());
-	mComponents.insert(ComponentMap::value_type(typeid(T).hash_code(), std::static_pointer_cast<KS_CORE::component::IComponent, T>(ptr)));
+	mComponents.insert(ComponentMap::value_type(CLASS_HASH(T), std::static_pointer_cast<KS_CORE::component::IComponent, T>(ptr)));
 	ptr->mOwner = this;
+	ptr->mUid = ++mUidCount;
 	return ptr;
 }
 
@@ -64,7 +71,7 @@ std::shared_ptr<T> Entity::getComponent(void)
 {
 	static_assert(::std::is_base_of<KS_CORE::component::IComponent, T>::value, "T must base of compnent::IComponent");
 
-	auto ptr = mComponents.find(typeid(T).hash_code());
+	auto ptr = mComponents.find(CLASS_HASH(T));
 	if (ptr == mComponents.end()) return std::shared_ptr<T>(nullptr);
 	return std::static_pointer_cast<T, ComponentMap::mapped_type::element_type>(ptr->second);
 }
@@ -76,12 +83,12 @@ std::shared_ptr<std::vector<std::shared_ptr<T>>> Entity::getComponents()
 	static_assert(::std::is_base_of<KS_CORE::component::IComponent, T>::value, "T must base of compnent::IComponent");
 
 	size_t count = 0;
-	count = mComponents.count(typeid(T).hash_code());
+	count = mComponents.count(CLASS_HASH(T));
 
 	std::vector<std::shared_ptr<T>>* result = new std::vector<std::shared_ptr<T>>();
 	result->reserve(count);
 
-	auto list = mComponents.equal_range(typeid(T).hash_code());
+	auto list = mComponents.equal_range(CLASS_HASH(T));
 	
 	for (auto itor = list.first; itor != list.second; ++itor)
 		result->push_back(std::static_pointer_cast<T, ComponentMap::mapped_type::element_type>(itor->second));
@@ -94,7 +101,7 @@ void Entity::removeComponents(void)
 {
 	static_assert(::std::is_base_of<KS_CORE::component::IComponent, T>::value, "T must base of compnent::IComponent");
 
-	mComponents.erase(typeid(T).hash_code());
+	mComponents.erase(CLASS_HASH(T));
 }
 
 template<typename T>
@@ -102,7 +109,7 @@ void Entity::removeComponent(int tag)
 {
 	static_assert(::std::is_base_of<KS_CORE::component::IComponent, T>::value, "T must base of compnent::IComponent");
 
-	auto find = mComponents.equal_range(typeid(T).hash_code());
+	auto find = mComponents.equal_range(CLASS_HASH(T));
 	for (auto itor = find.first; itor != find.second; ++itor)
 	{
 		if (find->second->getTag() == tag)
@@ -112,6 +119,8 @@ void Entity::removeComponent(int tag)
 		}
 	}
 }
+
+KS_REF_TYPE(Entity);
 
 KS_CORE_CONTAINER_END
 

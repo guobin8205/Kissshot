@@ -8,20 +8,20 @@ IComponent::~IComponent()
 	setOwner(nullptr);
 }
 
-void IComponent::setOwner(::kissshot::core::container::Entity * other)
+void IComponent::setOwner(std::shared_ptr<KS_CORE::container::Entity> other)
 {
-	if (other == mOwner) return;
+	if (other.get() == mOwner) return;
 
 	auto owner = mOwner;
 	mOwner = nullptr;
 	std::shared_ptr<IComponent> result = nullptr;
 
 	if (owner)
-		result = owner->removeComponent(this);
+		result = owner->removeComponent(CLASS_PTR_HASH(this), mUid);
 
 	if (other && result)
 	{
 		other->addComponent(result);
 	}
-	mOwner = other;
+	mOwner = other.get();
 }

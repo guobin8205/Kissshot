@@ -39,6 +39,8 @@ protected:
 	CameraType mType;
 };
 
+KS_REF_TYPE(Camera);
+
 KS_COMPONENT_END
 
 #endif

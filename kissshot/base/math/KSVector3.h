@@ -21,32 +21,32 @@ public:
 
 	///this function will change this;
 	///return *this
-	inline Vector3& normalizing(void);
+	Vector3& normalizing(void);
 
 	///this function will change this;
 	///return *this
-	inline Vector3& invert(void);
+	Vector3& invert(void);
 
 	///this function will change this;
 	///return *this
-	inline Vector3& absoulte(void);
+	Vector3& absoulte(void);
 
-	inline Vector3 getNormalizing(void);
+	Vector3 getNormalizing(void);
 
-	inline Vector3 getInvert(void);
+	Vector3 getInvert(void);
 
-	inline Vector3 getAbsoulte(void) const;
+	Vector3 getAbsoulte(void) const;
 
-	inline Vector3& scale(float xx, float yy = 1.0f, float zz = 1.0f);
+	Vector3& scale(float xx, float yy = 1.0f, float zz = 1.0f);
 
-	inline Vector3& scale(const Vector3& s);
+	Vector3& scale(const Vector3& s);
 
-	inline Vector3& set(float xx, float yy, float zz);
+	Vector3& set(float xx, float yy, float zz);
 
-	inline float length(void);
-	inline float dot(const Vector3& v2);
+	float length(void);
+	float dot(const Vector3& v2);
 	
-	inline Vector3& operator= (const Vector3& other);
+	Vector3& operator= (const Vector3& other);
 
 public:
 	float &x, &y, &z;

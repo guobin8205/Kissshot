@@ -22,22 +22,19 @@ using namespace Windows::UI::Xaml::Navigation;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
+KS_USE_CORE_CONTAINER;
 KS_USE_COMPONENT;
+KS_USE_MATH;
 
 MainPage::MainPage()
 {
 	InitializeComponent();
-	std::shared_ptr<kissshot::core::container::Entity> e1(new kissshot::core::container::Entity);
-	auto i1 = std::shared_ptr<kissshot::core::component::IComponent>(new kissshot::core::component::IComponent());
-	auto i2 = std::shared_ptr<kissshot::core::component::IComponent>(new kissshot::core::component::Camera());
-	i1->setTag(200);
-
-	{
-		e1->addComponent<kissshot::core::component::IComponent>()->setTag(300);
-		e1->addComponent(i1);
-		e1->addComponent(i2);
-	}
-	e1 = nullptr;
+	EntityRef e1(new Entity);
+	EntityRef e2(new Entity);
+	e1->addComponent<Camera>()->setTag(100U);
+	auto camera = e1->addComponent<Camera>();
+	camera->setLookAt(10.0f, 20.0f, 30.0f);
+	e2->addComponent(camera);
 
 	int a = 20;
 }

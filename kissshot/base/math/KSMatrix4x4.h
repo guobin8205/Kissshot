@@ -14,10 +14,10 @@ public:
 	Matrix4x4(const float(&ff)[16]);
 	Matrix4x4(const Matrix4x4& other);
 
-	inline Matrix4x4& inverse(void);
-	inline Matrix4x4 getInverse(void) const;
+	Matrix4x4& inverse(void);
+	Matrix4x4 getInverse(void) const;
 
-	inline Matrix4x4& operator = (const Matrix4x4& other);
+	Matrix4x4& operator = (const Matrix4x4& other);
 
 public:
 	float matrix[16];

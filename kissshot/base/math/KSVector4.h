@@ -18,33 +18,33 @@ public:
 
 	///this function will change this;
 	///return *this
-	inline Vector4& normalizing(void);
+	Vector4& normalizing(void);
 
 	///this function will change this;
 	///return *this
-	inline Vector4& invert(void);
+	Vector4& invert(void);
 
 	///this function will change this;
 	///return *this
-	inline Vector4& absoulte(void);
+	Vector4& absoulte(void);
 
-	inline Vector4 getNormalizing(void);
+	Vector4 getNormalizing(void);
 
-	inline Vector4 getInvert(void);
+	Vector4 getInvert(void);
 
-	inline Vector4 getAbsoulte(void) const;
+	Vector4 getAbsoulte(void) const;
 
-	inline Vector4& scale(float xx, float yy = 1.0f, float zz = 1.0f, float ww = 1.0f);
+	Vector4& scale(float xx, float yy = 1.0f, float zz = 1.0f, float ww = 1.0f);
 
-	inline Vector4& scale(const Vector4& s);
+	Vector4& scale(const Vector4& s);
 
-	inline Vector4& set(float xx, float yy, float zz, float ww = 1.0f);
+	Vector4& set(float xx, float yy, float zz, float ww = 1.0f);
 
 	//ignore w
-	inline float length(void);
-	inline float dot(const Vector4& v2);
+	float length(void);
+	float dot(const Vector4& v2);
 
-	inline Vector4& operator=(const Vector3& vec3);
+	Vector4& operator=(const Vector3& vec3);
 
 public:
 	float &x, &y, &z, &w;

@@ -13,13 +13,13 @@ class KS_DLL Size final
 public:
 	Size(float w = 0.0f, float h = 0.0f);
 
-	inline Size& scale(float w, float h);
-	inline Size& increase(float w, float h);
-	inline Size& set(float w, float h);
+	Size& scale(float w, float h);
+	Size& increase(float w, float h);
+	Size& set(float w, float h);
 
-	inline float length(void) const;
+	float length(void) const;
 
-	inline operator math::Vector3(void);
+	operator math::Vector3(void);
 public:
 	float width, height;
 };

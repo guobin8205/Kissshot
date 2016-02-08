@@ -89,6 +89,9 @@
     <ClCompile Include="..\..\kissshot\utils\KSDebug.cpp">
       <Filter>utils\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\kissshot\utils\KSGlobalLocker.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -279,6 +282,9 @@
       <Filter>utils\src</Filter>
     </ClInclude>
     <ClInclude Include="..\..\kissshot\utils\KSDebug.h">
+      <Filter>utils\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kissshot\utils\KSGlobalLocker.h">
       <Filter>utils\src</Filter>
     </ClInclude>
   </ItemGroup>

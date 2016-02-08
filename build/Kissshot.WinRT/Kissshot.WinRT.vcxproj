@@ -279,6 +279,7 @@
     <ClInclude Include="..\..\kissshot\kissshot.h" />
     <ClInclude Include="..\..\kissshot\KSMacro.h" />
     <ClInclude Include="..\..\kissshot\utils\KSDebug.h" />
+    <ClInclude Include="..\..\kissshot\utils\KSGlobalLocker.h" />
     <ClInclude Include="..\..\kissshot\utils\KSStorage.h" />
     <ClInclude Include="..\..\kissshot\utils\KSStringUtil.h" />
     <ClInclude Include="..\..\kissshot\utils\KSUtil.h" />
@@ -314,6 +315,7 @@
     <ClCompile Include="..\..\kissshot\external\bgfx\src\shader_spirv.cpp" />
     <ClCompile Include="..\..\kissshot\external\bgfx\src\vertexdecl.cpp" />
     <ClCompile Include="..\..\kissshot\utils\KSDebug.cpp" />
+    <ClCompile Include="..\..\kissshot\utils\KSGlobalLocker.cpp" />
     <ClCompile Include="..\..\kissshot\utils\KSStorage-winrt.cpp" />
     <ClCompile Include="..\..\kissshot\utils\KSStringUtil.cpp" />
     <ClCompile Include="pch.cpp">

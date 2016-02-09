@@ -83,10 +83,10 @@ void Camera::_useOrthMatrix(void)
 	auto& trans = owner->transform();
 	auto proj = MtxOrtho(mSize.width,mSize.height, mNear, mFar);
 	Matrix4x4 lookat;
-	Vector3 pos = trans.position,eye = mLookAt;
+	Vector3 pos = trans.position;
 	pos.x -= mSize.width * 0.5f, pos.y -= mSize.height * 0.5f;
-	eye.x -= mSize.width * 0.5f, eye.y -= mSize.height * 0.5f;
-	bx::mtxLookAt(lookat.matrix, pos.vector, eye.vector, mUp.vector);
+	mLookAt.x = pos.x, mLookAt.y = pos.y;
+	bx::mtxLookAt(lookat.matrix, pos.vector, mLookAt.vector, mUp.vector);
 
 	bgfx::setViewTransform(0, lookat.matrix, proj.matrix);
 }
@@ -97,7 +97,7 @@ void Camera::_usePresMatrix(void)
 	if (!owner) return;
 
 	auto& trans = owner->transform();
-	auto proj = MtxProj(mFovy, mSize.width / mSize.height, mNear, mFar);
+	auto proj = MtxProj(mFovy, mSize.width / mSize.height, mNear, mFar,true);
 	Matrix4x4 lookat;
 	bx::mtxLookAt(lookat.matrix, trans.position.vector, mLookAt.vector, mUp.vector);
 

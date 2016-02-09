@@ -77,9 +77,9 @@ int _main_(int argc, char **argv)
 	auto camera = e->addComponent<Camera>();
 	camera->setLookAt(0.0f, .0f, 0.0f)
 		.setSize(width, height)
-		.setEyeUp(0.0f, 1.0f, 0.0f)
-		.setType(Camera::CameraType::Perspective)
-		.setFovy(60.0f);
+		.setEyeUp(0.0f, 1.0f, 0.0f);
+		//.setType(Camera::CameraType::Perspective)
+		//.setFovy(60.0f);
 
 	// Set view 0 clear state.
 	bgfx::setViewClear(0
@@ -117,9 +117,8 @@ int _main_(int argc, char **argv)
 	auto program = bgfx::createProgram(vhandle, fhandle);
 
 	auto pos = kissshot::base::Transform();
-	pos.position.set(0.0f, -5.0f, 0.0f);
-	//pos.scale.set(20.0f, 20.0f, 1.0f);
-
+	pos.position.set(0.0f, -150.0, 35.0f);
+	pos.scale.set(30.0f, 30.0f, 30.0f);
 	e->transform().position.set(0.0f, 0.0f, -35.0f);
 	while (true)
 	{
@@ -131,12 +130,12 @@ int _main_(int argc, char **argv)
 		// if no other draw calls are submitted to view 0.
 
 		if (i > 100)
-			add = -1;
-		else if (i < -100)
-			add = 1;
+			i = 0;
+
 		i += add;
-		e->transform().position.x = i * 0.5;
+		//e->transform().position.x = i * 0.5;
 		//camera->setLookAt(e->transform().position.x, e->transform().position.y, 0.0f);
+		pos.rotate.set(0.0f, i * 360.0 / 100.0, 0.0f);
 
 		camera->use();
 

@@ -16,9 +16,24 @@ Matrix4x4::Matrix4x4(void)
 	bx::mtxIdentity(matrix);
 }
 
-Matrix4x4::Matrix4x4(const float(&ff)[16])
+Matrix4x4::Matrix4x4(const float(&mtx)[16])
 {
-	bx::mtxTranspose(matrix, ff);
+	matrix[ 0] = mtx[ 0];
+	matrix[ 1] = mtx[ 1];
+	matrix[ 2] = mtx[ 2];
+	matrix[ 3] = mtx[ 3];
+	matrix[ 4] = mtx[ 4];
+	matrix[ 5] = mtx[ 5];
+	matrix[ 6] = mtx[ 6];
+	matrix[ 7] = mtx[ 7];
+	matrix[ 8] = mtx[ 8];
+	matrix[ 9] = mtx[ 9];
+	matrix[10] = mtx[10];
+	matrix[11] = mtx[11];
+	matrix[12] = mtx[12];
+	matrix[13] = mtx[13];
+	matrix[14] = mtx[14];
+	matrix[15] = mtx[15];
 }
 
 Matrix4x4::Matrix4x4(const Matrix4x4 & other)
@@ -42,7 +57,23 @@ Matrix4x4 Matrix4x4::getInverse(void) const
 
 inline Matrix4x4 & Matrix4x4::operator=(const Matrix4x4 & other)
 {
-	bx::mtxTranspose(matrix, other.matrix);
+	auto mtx = other.matrix;
+	matrix[ 0] = mtx[ 0];
+	matrix[ 1] = mtx[ 1];
+	matrix[ 2] = mtx[ 2];
+	matrix[ 3] = mtx[ 3];
+	matrix[ 4] = mtx[ 4];
+	matrix[ 5] = mtx[ 5];
+	matrix[ 6] = mtx[ 6];
+	matrix[ 7] = mtx[ 7];
+	matrix[ 8] = mtx[ 8];
+	matrix[ 9] = mtx[ 9];
+	matrix[10] = mtx[10];
+	matrix[11] = mtx[11];
+	matrix[12] = mtx[12];
+	matrix[13] = mtx[13];
+	matrix[14] = mtx[14];
+	matrix[15] = mtx[15];
 	return *this;
 }
 
@@ -217,7 +248,7 @@ inline Matrix4x4 MtxScale(float xx, float yy, float zz)
 inline Matrix4x4 MtxRotateX(float rotation)
 {
 	Matrix4x4 res;
-	bx::mtxRotateX(res.matrix, bx::toDeg(rotation));
+	bx::mtxRotateX(res.matrix, bx::toRad(rotation));
 	return res;
 }
 
@@ -225,43 +256,50 @@ inline Matrix4x4 MtxRotateX(float rotation)
 inline Matrix4x4 MtxRotateY(float rotation)
 {
 	Matrix4x4 res;
-	bx::mtxRotateY(res.matrix, bx::toDeg(rotation));
+	bx::mtxRotateY(res.matrix, bx::toRad(rotation));
 	return res;
 }
 
 inline Matrix4x4 MtxRotateZ(float rotation)
 {
 	Matrix4x4 res;
-	bx::mtxRotateZ(res.matrix, bx::toDeg(rotation));
+	bx::mtxRotateZ(res.matrix, bx::toRad(rotation));
 	return res;
 }
 
 inline Matrix4x4 MtxRotateXYZ(float ax, float ay, float az)
 {
 	Matrix4x4 res;
-	bx::mtxRotateXYZ(res.matrix, bx::toDeg(ax), bx::toDeg(ay), bx::toDeg(az));
+	bx::mtxRotateXYZ(res.matrix, bx::toRad(ax), bx::toRad(ay), bx::toRad(az));
 	return res;
 }
 
 inline Matrix4x4 MtxSRT(float sx, float sy, float sz, float rx, float ry, float rz, float tx, float ty, float tz)
 {
 	Matrix4x4 res;
-	bx::mtxSRT(res.matrix, sx, sy, sz, bx::toDeg(rx), bx::toDeg(ry), bx::toDeg(rz), tx, ty, tz);
+	bx::mtxSRT(res.matrix, sx, sy, sz, bx::toRad(rx), bx::toRad(ry), bx::toRad(rz), tx, ty, tz);
 	return res;
 }
 
-inline Matrix4x4 MtxOrtho(float _left, float _right, float _bottom, float _top, float _near, float _far, float _offset, bool _center)
+inline Matrix4x4 MtxOrtho(float _left, float _right, float _bottom, float _top, float _near, float _far, float _offset, bool _oglNdc)
 {
 	Matrix4x4 res;
-	bx::mtxOrtho(res.matrix, _left, _right, _bottom, _top, _near, _far, _offset, _center);
+	bx::mtxOrtho(res.matrix, _left, _right, _bottom, _top, _near, _far, _offset, _oglNdc);
 	return res;
 }
 
-inline Matrix4x4 MtxOrtho(float _width, float _height, float _near, float _far, float _offset, bool _center)
+inline Matrix4x4 MtxOrtho(float _width, float _height, float _near, float _far, float _offset, bool _oglNdc)
 {
 	Matrix4x4 res;
-	bx::mtxOrtho(res.matrix, 0.0f, _width, 0.0f, _height, _near, _far, _offset, _center);
+	bx::mtxOrtho(res.matrix, 0.0f, _width, 0.0f, _height, _near, _far, _offset, _oglNdc);
 	return res;
+}
+
+inline KS_DLL Matrix4x4 MtxProj(float _fovy, float _aspect, float _near, float _far, bool _orgNdc)
+{
+	Matrix4x4 result;
+	bx::mtxProj(result.matrix, _fovy, _aspect, _near, _far, _orgNdc);
+	return result;
 }
 
 KS_MATH_END

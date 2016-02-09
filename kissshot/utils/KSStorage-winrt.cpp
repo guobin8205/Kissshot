@@ -11,7 +11,7 @@ Storage * Storage::getInstance(void)
 	if (!_instance)
 	{
 		_instance = new Storage();
-
+		_instance->addSearchPath(L"/");
 	}
 	return _instance;
 }

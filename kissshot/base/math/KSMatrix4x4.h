@@ -11,7 +11,7 @@ class KS_DLL Matrix4x4 final
 {
 public:
 	Matrix4x4(void);
-	Matrix4x4(const float(&ff)[16]);
+	Matrix4x4(const float(&mtx)[16]);
 	Matrix4x4(const Matrix4x4& other);
 
 	Matrix4x4& inverse(void);
@@ -68,8 +68,10 @@ extern inline KS_DLL Matrix4x4 MtxRotateXYZ(float ax, float ay, float az);
 //rotation is 0 to 360
 extern inline KS_DLL Matrix4x4 MtxSRT(float sx, float sy, float sz, float rx, float ry, float rz, float tx, float ty, float tz);
 
-extern inline KS_DLL Matrix4x4 MtxOrtho(float _left, float _right, float _bottom, float _top, float _near, float _far, float _offset = 0.0f, bool _center = false);
-extern inline KS_DLL Matrix4x4 MtxOrtho(float _width, float _height, float _near, float _far, float _offset = 0.0f, bool _center = false);
+extern inline KS_DLL Matrix4x4 MtxOrtho(float _left, float _right, float _bottom, float _top, float _near, float _far, float _offset = 0.0f, bool _oglNdc = false);
+extern inline KS_DLL Matrix4x4 MtxOrtho(float _width, float _height, float _near, float _far, float _offset = 0.0f, bool _oglNdc = false);
+
+extern inline KS_DLL Matrix4x4 MtxProj(float _fovy,float _aspect,float _near,float _far,bool _orgNdc = false);
 
 KS_MATH_END
 

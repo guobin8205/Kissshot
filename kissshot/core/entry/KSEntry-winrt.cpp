@@ -1,9 +1,10 @@
-﻿#include "KSEntry-winrt.h"
-#include "../bx/include/bx/platform.h"
-#include "../bx/include/bx/thread.h"
-
-#include <ppltasks.h>
-#include "kissshot.h"
+﻿#include "pch.h"
+#include "KSEntry-winrt.h"
+#include <bx/platform.h>
+#include <bx/thread.h>
+#include "../../external/bgfx/include/bgfx/bgfx.h"
+#include "../../external/bgfx/include/bgfx/bgfxplatform.h"
+#include "../../kissshot.h"
 #include "KSEntry.h"
 
 #if BX_PLATFORM_WINRT
@@ -23,8 +24,8 @@ using namespace Windows::Graphics::Display;
 [Platform::MTAThread]
 int main(Platform::Array<Platform::String^>^)
 {
-	auto direct3DEntrylicationSource = ref new KissshotSource();
-	CoreApplication::Run(direct3DEntrylicationSource);
+	auto kissshotsrc = ref new KissshotSource();
+	CoreApplication::Run(kissshotsrc);
 	return 0;
 }
 

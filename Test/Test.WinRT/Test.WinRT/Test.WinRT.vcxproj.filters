@@ -8,19 +8,26 @@
       <UniqueIdentifier>edf245f4-daf3-411d-bd8a-c1a35efcea55</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ApplicationDefinition Include="App.xaml" />
+    <Filter Include="entry">
+      <UniqueIdentifier>{7fc57fd4-1815-463e-beff-08d245cc6c42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp" />
     <ClCompile Include="MainPage.xaml.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="..\..\..\kissshot\core\entry\KSEntry-winrt.cpp">
+      <Filter>entry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h" />
     <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="..\..\..\kissshot\core\entry\KSEntry-winrt.h">
+      <Filter>entry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kissshot\core\entry\KSEntry.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
@@ -50,8 +57,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Test.WinRT_TemporaryKey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="MainPage.xaml" />
+    <None Include="Assets\fs_cubes.sc">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\varying.def.sc">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\vs_cubes.sc">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\vs_cubes.bin" />
+    <None Include="Assets\fs_cubes.bin">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
 </Project>

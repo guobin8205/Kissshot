@@ -1,7 +1,6 @@
 ﻿#pragma once
-#include "kissshot.h"
+#include "../../kissshot.h"
 
-#if BX_PLATFORM_WINRT
 namespace kissshot
 {
 	// 我们的应用程序的主入口点。使用 Windows shell 连接应用程序并处理应用程序生命周期事件。
@@ -45,4 +44,3 @@ ref class KissshotSource sealed : Windows::ApplicationModel::Core::IFrameworkVie
 public:
 	virtual Windows::ApplicationModel::Core::IFrameworkView^ CreateView();
 };
-#endif

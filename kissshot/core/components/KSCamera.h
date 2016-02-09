@@ -16,8 +16,11 @@ public:
 	};
 
 public:
-	KSComponentCtor(Camera);
+	Camera(const CameraType& type = CameraType::Orthogonal);
 	~Camera(void) = default;
+
+	inline Camera& setSize(float w, float h) { mSize.set(w, h); return *this; }
+	inline Camera& setSize(const KS_BASE::Size& size) { mSize = size; return *this; }
 
 	inline Camera& setLookAt(float x, float y, float z) { mLookAt.set(x, y, z); return *this; }
 	inline Camera& setLookAt(const KS_MATH::Vector3& vec) { mLookAt = vec; return *this; }
@@ -32,9 +35,31 @@ public:
 	inline const CameraType& getType(void) const { return mType; }
 	inline Camera& setType(const CameraType& type) { mType = type; return *this; }
 
+	inline Camera& setNear(float n) { mNear = n; return *this; }
+	inline Camera& setFar(float f) { mFar = f; return *this; }
+	inline Camera& setNearAndFar(float n, float f) { mNear = n; mFar = f; return *this; }
+
+	inline const float& getNear(void) const { return mNear; }
+	inline const float& getFar(void) const { return mFar; }
+
+	inline Camera& setFovy(float f) { mFovy = f; return *this; }
+	inline float getFovy(void) { return mFovy; }
+
+	virtual void use(void);
+
+protected:
+	virtual KS_MATH::Matrix4x4 _getOrthognalMatrix(void);
+	virtual KS_MATH::Matrix4x4 _getPerspectiveMatrix(void);
+
+	virtual void _useOrthMatrix(void);
+	virtual void _usePresMatrix(void);
+
 protected:
 	KS_MATH::Vector3 mLookAt;
 	KS_MATH::Vector3 mUp;
+	KS_BASE::Size mSize;
+
+	float mNear, mFar, mFovy;
 
 	CameraType mType;
 };

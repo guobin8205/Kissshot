@@ -24,9 +24,13 @@ public:
 
 	inline void reset(unsigned char* data = nullptr, size_t size = 0U)
 	{
-		size = size;
+		mSize = size;
 		mData.reset(data);
 	}
+
+	inline std::shared_ptr<unsigned char> getData(void) { return mData; }
+	inline const size_t& getSize(void) const { return mSize; }
+
 private:
 	std::shared_ptr<unsigned char> mData;
 	size_t mSize;

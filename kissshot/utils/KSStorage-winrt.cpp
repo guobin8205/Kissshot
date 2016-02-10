@@ -116,8 +116,8 @@ bool Storage::_init(void)
 
 std::wstring Storage::getWritablePath(void)
 {
-	Windows::Storage::ApplicationData::Current->LocalFolder->Path;
-	return std::wstring();
+	std::wstring path(Windows::Storage::ApplicationData::Current->LocalFolder->Path->Data());
+	return path;
 }
 
 std::wstring Storage::getLocationPath(void)

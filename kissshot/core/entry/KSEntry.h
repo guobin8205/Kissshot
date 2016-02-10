@@ -60,6 +60,8 @@ static const uint16_t s_cubeIndices[36] =
 	6, 3, 7,
 };
 
+typedef Camera& (Camera::*Fun)(float);
+
 int _main_(int argc, char **argv)
 {
 	uint32_t width = 1280;
@@ -70,26 +72,25 @@ int _main_(int argc, char **argv)
 	bgfx::init();
 	bgfx::reset(width, height, reset);
 
+	Fun fun = &Camera::setNear;
 	// Enable debug text.
 	bgfx::setDebug(debug);
 
 	EntityRef e(new Entity());
 	auto camera = e->addComponent<Camera>();
-	camera->setLookAt(0.0f, .0f, 0.0f)
+	camera->setLookAt(0.0f, 0.0f, 0.0f)
 		.setSize(width, height)
-		.setEyeUp(0.0f, 1.0f, 0.0f);
-		//.setType(Camera::CameraType::Perspective)
-		//.setFovy(60.0f);
+		.setEyeUp(0.0f, 1.0f, 0.0f)
+		.setType(Camera::CameraType::Perspective)
+		.setFovy(60.0f);
 
 	// Set view 0 clear state.
 	bgfx::setViewClear(0
 		, BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH
-		, 0x303030ff
+		, 0x00000000
 		, 1.0f
 		, 0
 		);
-
-
 	// Create vertex stream declaration.
 	PosColorVertex::init();
 
@@ -117,59 +118,38 @@ int _main_(int argc, char **argv)
 	auto program = bgfx::createProgram(vhandle, fhandle);
 
 	auto pos = kissshot::base::Transform();
-	pos.position.set(0.0f, -150.0, 35.0f);
-	pos.scale.set(30.0f, 30.0f, 30.0f);
-	e->transform().position.set(0.0f, 0.0f, -35.0f);
+	pos.position.set(0.0f, 0.0f, 0.0f);
+
+	e->transform().position.set(0.0f, 0.0f, - 10.0f);
+
+
 	while (true)
 	{
 		static int i = 0;
 		static int add = 1;
-		// Set view 0 default viewport.
+
+		camera->use(0);
+
 		bgfx::setViewRect(0, 0, 0, width, height);
-		// This dummy draw call is here to make sure that view 0 is cleared
-		// if no other draw calls are submitted to view 0.
-
-		if (i > 100)
-			i = 0;
-
-		i += add;
-		//e->transform().position.x = i * 0.5;
-		//camera->setLookAt(e->transform().position.x, e->transform().position.y, 0.0f);
-		pos.rotate.set(0.0f, i * 360.0 / 100.0, 0.0f);
-
-		camera->use();
-
-		//float view[16];
-		//float at[3] = { 0.0f, 0.0f,   0.0f };
-		//float eye[3] = { 0.0f, 0.0f, -35.0f };
-		//bx::mtxLookAt(view, eye, at);
-
-		//float proj[16];
-		////bx::mtxProj(proj, 60.0f, float(width) / float(height), 0.1f, 100.0f);
-		//bx::mtxOrtho(proj, 0.0f, float(width), 0.0f, float(height), 0.1f, 100.0f);
-		//bgfx::setViewTransform(0, view, proj);
 
 		bgfx::touch(0);
 
-		//// Set model matrix for rendering.
-		//bgfx::setTransform(mtx);
-		auto matrix = pos.getMatrix();
 		bgfx::setTransform(pos.getMatrix().matrix);
-		// Set vertex and index buffer.
+
 		bgfx::setVertexBuffer(m_vbh);
 		bgfx::setIndexBuffer(m_ibh);
 
-		// Set render states.
 		bgfx::setState(BGFX_STATE_DEFAULT);
 
-		// Submit primitive for rendering to view 0.
 		bgfx::submit(0, program);
 
-		// Advance to next frame. Rendering thread will be kicked to
-		// process submitted rendering primitives.
 		bgfx::frame();
+
+		bgfx::saveScreenShot(KS_W2A(kissshot::utils::Storage::getInstance()->getWritablePath() + L"/aa").c_str());
+		//break;
 	}
 
+	//bgfx::saveScreenShot(KS_W2A(kissshot::utils::Storage::getInstance()->getWritablePath() + L"/aa").c_str());
 	// Shutdown bgfx.
 	bgfx::shutdown();
 

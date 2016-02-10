@@ -7,6 +7,10 @@
 KS_USE_MATH;
 KS_USE_COMPONENT;
 
+#define DEFAULT_CAMERA_ID ((uint8_t)0)
+
+static std::shared_ptr<Camera> mCamara;
+
 Camera::Camera(const CameraType & type)
 	: mType(type)
 	, mLookAt(0.0f,0.0f,0.0f)
@@ -34,15 +38,16 @@ Matrix4x4 Camera::getViewMatrix(void)
 	return result;
 }
 
-void Camera::use(void)
+void Camera::use(uint8_t id)
 {
+	mCamara = this->shared_from_this();
 	switch (mType)
 	{
 	case ::kissshot::core::component::Camera::CameraType::Orthogonal:
-		_useOrthMatrix();
+		_useOrthMatrix(id);
 		break;
 	case ::kissshot::core::component::Camera::CameraType::Perspective:
-		_usePresMatrix();
+		_usePresMatrix(id);
 		break;
 	default:
 		break;
@@ -55,8 +60,11 @@ Matrix4x4 Camera::_getOrthognalMatrix(void)
 	if (!owner) return Matrix4x4::Identity;
 
 	auto& trans = owner->transform();
-	auto proj = MtxOrtho(trans.position.x, trans.position.x + mSize.width, trans.position.y, trans.position.y + mSize.height, trans.position.z + mNear, trans.position.z + mFar, 0.0f, true);
+	auto proj = MtxOrtho(mSize.width, mSize.height, mNear, mFar);
 	Matrix4x4 lookat;
+	Vector3 pos = trans.position;
+	pos.x -= mSize.width * 0.5f, pos.y -= mSize.height * 0.5f;
+	mLookAt.x = pos.x, mLookAt.y = pos.y;
 	bx::mtxLookAt(lookat.matrix, trans.position.vector, mLookAt.vector, mUp.vector);
 
 	return lookat * proj;
@@ -68,14 +76,14 @@ Matrix4x4 Camera::_getPerspectiveMatrix(void)
 	if (!owner) return Matrix4x4::Identity;
 
 	auto& trans = owner->transform();
-	auto proj = MtxProj(mFovy, mSize.width / mSize.height, trans.position.z + mNear, trans.position.z + mFar, true);
+	auto proj = MtxProj(mFovy, mSize.width / mSize.height, mNear, mFar);
 	Matrix4x4 lookat;
 	bx::mtxLookAt(lookat.matrix, trans.position.vector, mLookAt.vector, mUp.vector);
 
 	return lookat * proj;
 }
 
-void Camera::_useOrthMatrix(void)
+void Camera::_useOrthMatrix(uint8_t id)
 {
 	auto owner = getOwner();
 	if (!owner) return;
@@ -88,10 +96,10 @@ void Camera::_useOrthMatrix(void)
 	mLookAt.x = pos.x, mLookAt.y = pos.y;
 	bx::mtxLookAt(lookat.matrix, pos.vector, mLookAt.vector, mUp.vector);
 
-	bgfx::setViewTransform(0, lookat.matrix, proj.matrix);
+	bgfx::setViewTransform(id, lookat.matrix, proj.matrix);
 }
 
-void Camera::_usePresMatrix(void)
+void Camera::_usePresMatrix(uint8_t id)
 {
 	auto owner = getOwner();
 	if (!owner) return;
@@ -101,5 +109,5 @@ void Camera::_usePresMatrix(void)
 	Matrix4x4 lookat;
 	bx::mtxLookAt(lookat.matrix, trans.position.vector, mLookAt.vector, mUp.vector);
 
-	bgfx::setViewTransform(0, lookat.matrix, proj.matrix);
+	bgfx::setViewTransform(id, lookat.matrix, proj.matrix);
 }

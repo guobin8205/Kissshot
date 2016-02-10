@@ -6,7 +6,9 @@
 
 KS_COMPONENT_BEGIN
 
-class Camera : public IComponent
+typedef uint8_t CameraMask;
+
+class Camera : public IComponent,public std::enable_shared_from_this<Camera>
 {
 public:
 	enum class CameraType
@@ -45,14 +47,14 @@ public:
 	inline Camera& setFovy(float f) { mFovy = f; return *this; }
 	inline float getFovy(void) { return mFovy; }
 
-	virtual void use(void);
+	virtual void use(uint8_t id);
 
 protected:
 	virtual KS_MATH::Matrix4x4 _getOrthognalMatrix(void);
 	virtual KS_MATH::Matrix4x4 _getPerspectiveMatrix(void);
 
-	virtual void _useOrthMatrix(void);
-	virtual void _usePresMatrix(void);
+	virtual void _useOrthMatrix(uint8_t id);
+	virtual void _usePresMatrix(uint8_t id);
 
 protected:
 	KS_MATH::Vector3 mLookAt;
@@ -62,6 +64,8 @@ protected:
 	float mNear, mFar, mFovy;
 
 	CameraType mType;
+	uint8_t mId;
+
 };
 
 KS_REF_TYPE(Camera);

@@ -9,6 +9,8 @@
 KS_UTIL_BEGIN
 ::std::string KS_DLL WString2String(const std::wstring& str);
 ::std::wstring KS_DLL String2WString(const std::string& str);
+extern inline uint32 KS_DLL GetHashCode(const std::string& str);
+extern inline uint32 KS_DLL GetHashCode(const std::wstring& str);
 KS_UTIL_END
 
 #define KS_W2A(wstr)	KS_UTIL::WString2String(wstr)

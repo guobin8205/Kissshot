@@ -16,6 +16,9 @@ CLASS operator= (const CLASS& other) = delete; \
 CLASS(const CLASS&) = delete; \
 CLASS()
 
+#define KSPtr2ICom(SHARE,TYPE) std::static_pointer_cast<KS_CORE::component::IComponent, TYPE>(SHARE)
+#define KSICom2Type(SHARE,TYPE) std::static_pointer_cast<TYPE,KS_CORE::component::IComponent>(SHARE)
+
 #define KSComponentCtorDef(CLASS) \
 CLASS::CLASS()
 

@@ -36,16 +36,24 @@ std::shared_ptr<KS_CORE::component::IComponent> Entity::addComponent(std::shared
 		mComponents.insert(ComponentMap::value_type(hash, ptr));
 		ptr->mOwner = this;
 		ptr->mUid = ++mUidCount;
+		ptr->initInEntity();
 	}
 	return ptr;
 }
 
 void Entity::removeComponents(uint32 hashcode)
 {
+	auto list = mComponents.equal_range(hashcode);
+	for (auto itor = list.first; itor != list.second; ++itor)
+	{
+		itor->second->setOwner(nullptr);
+		itor->second->destoryInEntity();
+	}
+
 	mComponents.erase(hashcode);
 }
 
-std::shared_ptr<KS_CORE::component::IComponent> Entity::removeComponent(uint32 hashcode, int uid)
+std::shared_ptr<KS_CORE::component::IComponent> Entity::removeComponent(uint32 hashcode, uint32 uid)
 {
 	auto list = mComponents.equal_range(hashcode);
 	std::shared_ptr<KS_CORE::component::IComponent> result(nullptr);
@@ -57,10 +65,19 @@ std::shared_ptr<KS_CORE::component::IComponent> Entity::removeComponent(uint32 h
 			result = itor->second;
 			mComponents.erase(itor);
 			result->setOwner(nullptr);
+			result->destoryInEntity();
 			break;
 		}
 	}
 	return result;
+}
+
+std::shared_ptr<KS_CORE::component::IComponent> Entity::removeComponent(std::shared_ptr<KS_CORE::component::IComponent> com)
+{
+	auto hash_code = CLASS_PTR_HASH(com.get());
+	auto uid = com->getUid();
+	removeComponent(hash_code, uid);
+	return com;
 }
 
 void Entity::_refreshUid(void)

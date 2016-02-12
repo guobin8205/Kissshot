@@ -6,7 +6,6 @@ KS_USE_COMPONENT;
 IComponent::~IComponent()
 {
 	setOwner(nullptr);
-
 }
 
 void IComponent::setOwner(std::shared_ptr<KS_CORE::container::Entity> other)
@@ -25,4 +24,9 @@ void IComponent::setOwner(std::shared_ptr<KS_CORE::container::Entity> other)
 		other->addComponent(result);
 	}
 	mOwner = other.get();
+}
+
+void IComponent::destoryInEntity(void)
+{
+	setOwner(nullptr);
 }

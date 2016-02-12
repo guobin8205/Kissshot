@@ -16,6 +16,7 @@ public:
 		: mTag(0)
 		, mUid(0)
 		, mOwner(nullptr)
+		, mIsEnable(true)
 	{}
 
 	virtual ~IComponent();
@@ -31,7 +32,13 @@ public:
 
 	virtual inline const uint32& getUid(void) const { return mUid; }
 
+
 	friend class KS_CORE::container::Entity;
+
+protected:
+	virtual void destoryInEntity(void);
+	virtual void initInEntity(void) = 0;
+
 protected:
 	uint32 mTag;
 	KS_CORE::container::Entity* mOwner;

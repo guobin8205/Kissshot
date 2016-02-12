@@ -35,10 +35,12 @@ public:
 	void removeComponents(void);
 
 	template<typename T>
-	void removeComponent(int tag);
+	std::shared_ptr<T> removeComponent(int tag);
 
 	void removeComponents(uint32 hashcode);
-	std::shared_ptr<KS_CORE::component::IComponent> removeComponent(uint32 hashcode, int uid);
+	std::shared_ptr<KS_CORE::component::IComponent> removeComponent(uint32 hashcode, uint32 uid);
+
+	std::shared_ptr<KS_CORE::component::IComponent> removeComponent(std::shared_ptr<KS_CORE::component::IComponent> com);
 
 	inline KS_BASE::Transform& transform() { return mTransform; }
 	inline KS_MATH::Matrix4x4 getMatrix() { return mTransform.getMatrix(); }
@@ -63,6 +65,7 @@ std::shared_ptr<T> Entity::addComponent(void)
 	mComponents.insert(ComponentMap::value_type(CLASS_HASH(T), std::static_pointer_cast<KS_CORE::component::IComponent, T>(ptr)));
 	ptr->mOwner = this;
 	ptr->mUid = ++mUidCount;
+	ptr->initInEntity();
 	return ptr;
 }
 
@@ -100,24 +103,27 @@ template<typename T>
 void Entity::removeComponents(void)
 {
 	static_assert(::std::is_base_of<KS_CORE::component::IComponent, T>::value, "T must base of compnent::IComponent");
-
-	mComponents.erase(CLASS_HASH(T));
+	removeComponents(CLASS_HASH(T));
 }
 
 template<typename T>
-void Entity::removeComponent(int tag)
+std::shared_ptr<T> Entity::removeComponent(int tag)
 {
 	static_assert(::std::is_base_of<KS_CORE::component::IComponent, T>::value, "T must base of compnent::IComponent");
 
+	std::shared_ptr<T> result;
 	auto find = mComponents.equal_range(CLASS_HASH(T));
 	for (auto itor = find.first; itor != find.second; ++itor)
 	{
-		if (find->second->getTag() == tag)
+		if (itor->second->getTag() == tag)
 		{
+			itor->destory();
 			mComponents.erase(find);
+			result = std::static_pointer_cast<T, ComponentMap::mapped_type::element_type>(itor->second);
 			break;
 		}
 	}
+	return result;
 }
 
 KS_REF_TYPE(Entity);

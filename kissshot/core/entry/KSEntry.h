@@ -72,25 +72,21 @@ int _main_(int argc, char **argv)
 	bgfx::init();
 	bgfx::reset(width, height, reset);
 
-	Fun fun = &Camera::setNear;
 	// Enable debug text.
 	bgfx::setDebug(debug);
 
-	EntityRef e(new Entity());
-	auto camera = e->addComponent<Camera>();
-	camera->setLookAt(0.0f, 0.0f, 0.0f)
-		.setSize(width, height)
-		.setEyeUp(0.0f, 1.0f, 0.0f)
-		.setType(Camera::CameraType::Perspective)
-		.setFovy(60.0f);
+	{
+		Camera camera;
+		int a = 10;
+	}
 
-	// Set view 0 clear state.
-	bgfx::setViewClear(0
-		, BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH
-		, 0x00000000
-		, 1.0f
-		, 0
-		);
+	EntityRef e(new Entity());
+	CameraRef camera(new Camera());
+	auto& cameras = Camera::GetCameras();
+	camera->setClearCamera(BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH, 0xFF0000FF);
+	e->addComponent(camera);
+	camera->mLookAt.set(0.0f, 0.0f, 0.0f);
+
 	// Create vertex stream declaration.
 	PosColorVertex::init();
 
@@ -128,7 +124,7 @@ int _main_(int argc, char **argv)
 		static int i = 0;
 		static int add = 1;
 
-		camera->use(0);
+		camera->use();
 
 		bgfx::setViewRect(0, 0, 0, width, height);
 

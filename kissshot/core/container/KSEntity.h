@@ -20,8 +20,8 @@ public:
 	Entity(void);
 	~Entity(void);
 	
-	template<typename T>
-	std::shared_ptr<T> addComponent(void);
+	template<typename T,typename ...Tx>
+	std::shared_ptr<T> addComponent(Tx... parmes);
 
 	std::shared_ptr<KS_CORE::component::IComponent> addComponent(std::shared_ptr<KS_CORE::component::IComponent> ptr);
 
@@ -55,17 +55,18 @@ private:
 	uint32 mUidCount;
 };
 
-template<typename T>
-std::shared_ptr<T> Entity::addComponent(void)
+template<typename T, typename ...Tx>
+std::shared_ptr<T> Entity::addComponent(Tx... parmes)
 {
 	static_assert(::std::is_base_of<KS_CORE::component::IComponent, T>::value, "T must base of compnent::IComponent");
 	_checkUid();
 
-	std::shared_ptr<T> ptr(new T());
-	mComponents.insert(ComponentMap::value_type(CLASS_HASH(T), std::static_pointer_cast<KS_CORE::component::IComponent, T>(ptr)));
-	ptr->mOwner = this;
-	ptr->mUid = ++mUidCount;
-	ptr->initInEntity();
+	std::shared_ptr<T> ptr(new T(parmes...));
+	auto iptr = std::static_pointer_cast<KS_CORE::component::IComponent, T>(ptr);
+	mComponents.insert(ComponentMap::value_type(CLASS_HASH(T), iptr));
+	iptr->mOwner = this;
+	iptr->mUid = ++mUidCount;
+	iptr->initInEntity();
 	return ptr;
 }
 

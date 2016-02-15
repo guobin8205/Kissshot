@@ -75,16 +75,9 @@ int _main_(int argc, char **argv)
 	// Enable debug text.
 	bgfx::setDebug(debug);
 
-	{
-		Camera camera;
-		int a = 10;
-	}
-
 	EntityRef e(new Entity());
-	CameraRef camera(new Camera());
-	auto& cameras = Camera::GetCameras();
-	camera->setClearCamera(BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH, 0xFF0000FF);
-	e->addComponent(camera);
+	auto camera = e->addComponent<Camera>(Camera::CameraType::Perspective,0.1f,100.0f,100.0f);
+	camera->setClearCamera(BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH,0xff0000ff);
 	camera->mLookAt.set(0.0f, 0.0f, 0.0f);
 
 	// Create vertex stream declaration.
